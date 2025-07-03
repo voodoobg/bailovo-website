@@ -25,15 +25,6 @@ export default function Footer() {
                 : 'Birthplace of the great Bulgarian writer Elin Pelin. Discover the history and beauty of our village.'
               }
             </p>
-            <div className="flex space-x-6">
-              <Link 
-                href={`/${locale}/contact`}
-                className="inline-flex items-center bg-secondary-500 hover:bg-secondary-600 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 transform hover:-translate-y-1"
-              >
-                Get in Touch
-                <ArrowRight className="w-4 h-4 ml-2" />
-              </Link>
-            </div>
           </div>
 
           {/* Links & Contact */}
@@ -60,7 +51,7 @@ export default function Footer() {
                   href={`/${locale}/culture`} 
                   className="block text-gray-300 hover:text-white text-lg transition-colors duration-200"
                 >
-                  {locale === 'bg' ? 'Културен център' : 'Cultural Center'}
+                  {locale === 'bg' ? 'НЧ „Елин Пелин – 1922”' : 'Cultural Center'}
                 </Link>
                 <Link 
                   href={`/${locale}/events`} 
@@ -111,7 +102,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-gray-800 pt-8 flex flex-col lg:flex-row justify-between items-center space-y-4 lg:space-y-0">
           <p className="text-gray-400 text-lg">
-            © 2024 Bailovo Village. All rights reserved.
+            © 2025 Село Байлово. All rights reserved | <a href="https://www.svet.dev" className="text-gray-400 hover:text-white transition-colors duration-200">Svet.dev</a>
           </p>
           <div className="flex items-center space-x-6">
             <Link 

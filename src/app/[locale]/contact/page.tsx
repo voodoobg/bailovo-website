@@ -99,19 +99,19 @@ export default function ContactPage() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <h3 className="font-semibold text-primary-600 mb-2">{t('museum')}</h3>
-                  <p className="text-gray-600 text-s">museum@bailovo.eu</p>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-primary-600 mb-2">{t('culture')}</h3>
-                  <p className="text-gray-600 text-s">culture@bailovo.eu</p>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-primary-600 mb-2">{t('mayor')}</h3>
-                  <p className="text-gray-600 text-s">mayor@bailovo.eu</p>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-primary-600 mb-2">{t('tourism')}</h3>
-                  <p className="text-gray-600 text-m">tourism@bailovo.eu</p>
+                                     <p className="text-gray-600 text-sm">museum@bailovo.eu</p>
+                  </div>
+                  <div>
+                   <h3 className="font-semibold text-primary-600 mb-2">{t('culture')}</h3>
+                   <p className="text-gray-600 text-sm">culture@bailovo.eu</p>
+                  </div>
+                  <div>
+                   <h3 className="font-semibold text-primary-600 mb-2">{t('mayor')}</h3>
+                   <p className="text-gray-600 text-sm">mayor@bailovo.eu</p>
+                  </div>
+                  <div>
+                   <h3 className="font-semibold text-primary-600 mb-2">{t('tourism')}</h3>
+                   <p className="text-gray-600 text-sm">tourism@bailovo.eu</p>
                 </div>
               </div>
             </div>

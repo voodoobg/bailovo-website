@@ -262,12 +262,7 @@ export default function HeroSection() {
         <div className="fade-in-up">
           {/* Main Heading */}
           <h1 className="text-5xl md:text-7xl lg:text-6xl font-black text-gray-900 mb-8 leading-tight tracking-tight">
-            {t('title').split(' ').map((word, index) => (
-              <span key={index} className={index === 0 ? 'block' : 'block'}>
-                {word}
-                {index === 0 && <span className="text-primary-600">.</span>}
-              </span>
-            ))}
+            <span>{t('title')}</span>
           </h1>
 
           {/* Subtitle */}

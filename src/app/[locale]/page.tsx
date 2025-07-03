@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { ArrowRight, Calendar, BookOpen, Users } from 'lucide-react';
 import HeroSection from '@/components/HeroSection';
 import NewsEventsWidget from '@/components/NewsEventsWidget';
+import DebugPanel from '@/components/DebugPanel';
 
 export default function HomePage() {
   const t = useTranslations('homepage');
@@ -153,6 +154,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Debug Panel - Only visible in development */}
+      <DebugPanel />
     </div>
   );
 } 

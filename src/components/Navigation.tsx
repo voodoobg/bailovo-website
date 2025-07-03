@@ -2,6 +2,7 @@
 
 import { useTranslations, useLocale } from 'next-intl';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Globe, Menu, X } from 'lucide-react';
 import { useState } from 'react';
@@ -31,12 +32,15 @@ export default function Navigation() {
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <Link href={`/${locale}`} className="flex items-center space-x-3 group">
-            <div className="w-10 h-10 bg-gradient-to-r from-secondary-500 to-secondary-600 rounded-xl flex items-center justify-center transform group-hover:scale-105 transition-transform duration-200">
-              <span className="text-white font-black text-lg">Б</span>
+            <div className="relative w-[250px] h-12 transform group-hover:scale-105 transition-transform duration-200">
+              <Image
+                src="/logo.png"
+                alt="Bailovo Village Logo"
+                fill
+                className="object-cover"
+                priority
+              />
             </div>
-            <span className="font-bold text-2xl text-gray-900 group-hover:text-primary-600 transition-colors duration-200">
-              Байлово
-            </span>
           </Link>
 
           {/* Desktop Navigation */}

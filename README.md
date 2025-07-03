@@ -206,6 +206,5 @@ For questions about this project, please contact:
 
 ## 🙏 Acknowledgments
 
-- Inspired by the design of webiz.team
 - Built for the community of Bailovo village
 - Dedicated to preserving the legacy of Elin Pelin

@@ -1,0 +1,114 @@
+{
+  "navigation": {
+    "home": "Home",
+    "history": "History",
+    "culture": "Cultural Center",
+    "museum": "Elin Pelin Museum",
+    "news": "News",
+    "events": "Events",
+    "contact": "Contact"
+  },
+  "homepage": {
+    "hero": {
+      "title": "Welcome to Bailovo Village",
+      "subtitle": "Birthplace of the great Bulgarian writer Elin Pelin",
+      "description": "Discover the beauty and history of one of the most picturesque villages in Sofia Province"
+    },
+    "about": {
+      "title": "About Bailovo Village",
+      "description": "Bailovo is a small but historic village in Sofia Province, best known as the birthplace of the renowned Bulgarian writer Elin Pelin (Dimitar Ivanov Stoyanov). The village is located in a picturesque area, surrounded by green hills and rich history."
+    },
+    "highlights": {
+      "title": "Highlights",
+      "museum": {
+        "title": "Elin Pelin Museum",
+        "description": "Visit the birthplace of the great writer, converted into a museum"
+      },
+      "culture": {
+        "title": "Cultural Center",
+        "description": "The center for cultural activities and community events"
+      },
+      "nature": {
+        "title": "Nature",
+        "description": "Enjoy the beautiful nature and hiking trails"
+      }
+    },
+    "stats": {
+      "history": "History",
+      "description": "Statistics for Bailovo village",
+      "years": "Years of history",
+      "residents": "Residents",
+      "community": "Community spirit"
+    },
+    "news_events": {
+      "title": "News and Events",
+      "description": "Stay up to date with the latest events in our vibrant community in Bailovo village",
+      "learn_more": "Learn more",
+      "news": "News",
+      "events": "Events",
+      "view_all": "View all"
+    },
+    "cta": {
+      "title": "Visit Bailovo Village",
+      "description": "Experience the history, culture, and beauty of Elin Pelin's birthplace"
+    }
+  },
+  "history": {
+    "title": "History of Bailovo Village",
+    "content": "Bailovo village has a rich history that spans centuries. The village is best known as the birthplace of Dimitar Ivanov Stoyanov, better known by his pseudonym Elin Pelin, born on July 8, 1877."
+  },
+  "museum": {
+    "title": "Elin Pelin Museum",
+    "description": "The birthplace of Elin Pelin in Bailovo village has been converted into a museum that showcases the life and work of the writer."
+  },
+  "culture": {
+    "title": "Cultural Center",
+    "description": "The cultural center is the heart of community activities in Bailovo village."
+  },
+  "news": {
+    "title": "News",
+    "latest": "Latest News"
+  },
+  "events": {
+    "title": "Events",
+    "upcoming": "Upcoming Events"
+  },
+  "contact": {
+    "title": "Contact",
+    "location": "Location",
+    "location_description": "Find us on the map",
+    "openstreetmap": "Open in OpenStreetMap",
+    "contact_information": "Contact Information",
+    "address": "Address",
+    "address_description": "Bailovo Village, Sofia Province, Bulgaria",
+    "phone": "Phone",
+    "email": "Email",
+    "open_times": "Open Times",
+    "monday_friday": "Monday - Friday",
+    "saturday": "Saturday",
+    "sunday": "Sunday",
+    "closed": "Closed",
+    "send_message": "Send Message",
+    "useful_links": "Useful Links",
+    "museum": "Museum",
+    "culture": "Cultural Center",
+    "mayor": "Mayor",
+    "tourism": "Tourism",
+    "form_name": "Name",
+    "form_name_description": "First name",
+    "form_last_name": "Last name",
+    "form_last_name_description": "Your last name",
+    "form_email": "Email",
+    "form_email_description": "Your email",
+    "form_subject": "Subject",
+    "form_subject_description": "Your subject",
+    "form_message": "Message",
+    "form_message_description": "Your message",
+    "form_submit": "Submit"
+  },
+  "footer": {
+    "contact": "Contact",
+    "address": "Bailovo Village, Sofia Province, Bulgaria",
+    "rights": "© 2024 Bailovo Village. All rights reserved."
+  }
+} 

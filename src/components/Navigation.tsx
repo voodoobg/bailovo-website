@@ -31,11 +31,11 @@ export default function Navigation() {
       <div className="max-w-8xl mx-auto px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
-          <Link href={`/${locale}`} className="flex items-center space-x-3 group">
+          <Link href={`/${locale}`} className="flex mt-3 items-center space-x-3 group">
             <div className="relative w-[250px] h-12 transform group-hover:scale-105 transition-transform duration-200">
               <Image
-                src="/logo.png"
-                alt="Bailovo Village Logo"
+                src="/logo3.png"
+                alt="с. Байлово"
                 fill
                 className="object-cover"
                 priority

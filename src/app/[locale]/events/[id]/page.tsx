@@ -213,9 +213,6 @@ export default async function EventDetailPage({ params }: EventDetailPageProps) 
                 <div className="text-center">
                   <MapPin className="w-12 h-12 text-secondary-500 mx-auto mb-2" />
                   <p className="text-gray-600 font-medium">{location}</p>
-                  <p className="text-gray-500 text-sm mt-1">
-                    {locale === 'bg' ? 'Карта скоро' : 'Map coming soon'}
-                  </p>
                 </div>
               </div>
             </div>

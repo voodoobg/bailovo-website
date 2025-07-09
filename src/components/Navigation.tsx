@@ -4,27 +4,47 @@ import { useTranslations, useLocale } from 'next-intl';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { Globe, Menu, X } from 'lucide-react';
+import { Globe, Menu, X, ChevronDown } from 'lucide-react';
 import { useState } from 'react';
+
+interface NavigationItem {
+  name: string;
+  href: string;
+  dropdown?: NavigationItem[];
+}
 
 export default function Navigation() {
   const t = useTranslations('navigation');
   const locale = useLocale();
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-  const navigation = [
+  const navigation: NavigationItem[] = [
     { name: t('home'), href: `/${locale}` },
     { name: t('history'), href: `/${locale}/history` },
     { name: t('culture'), href: `/${locale}/culture` },
     { name: t('museum'), href: `/${locale}/museum` },
-    { name: t('news'), href: `/${locale}/news` },
-    { name: t('events'), href: `/${locale}/events` },
+    { 
+      name: t('information'), 
+      href: '#', 
+      dropdown: [
+        { name: t('news'), href: `/${locale}/news` },
+        { name: t('events'), href: `/${locale}/events` },
+      ]
+    },
     { name: t('contact'), href: `/${locale}/contact` },
   ];
 
   const otherLocale = locale === 'bg' ? 'en' : 'bg';
   const switchLocalePath = pathname.replace(`/${locale}`, `/${otherLocale}`);
+
+  const isDropdownItemActive = (item: NavigationItem) => {
+    if (item.dropdown) {
+      return item.dropdown.some((subItem: NavigationItem) => pathname === subItem.href);
+    }
+    return pathname === item.href;
+  };
 
   return (
     <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-xl border-b border-gray-100 z-50">
@@ -46,7 +66,55 @@ export default function Navigation() {
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-12">
             {navigation.map((item) => {
-              const isActive = pathname === item.href;
+              const isActive = isDropdownItemActive(item);
+              
+              if (item.dropdown) {
+                return (
+                  <div 
+                    key={item.name}
+                    className="relative"
+                    onMouseEnter={() => setIsDropdownOpen(true)}
+                    onMouseLeave={() => setIsDropdownOpen(false)}
+                  >
+                    <button
+                      className={`flex items-center space-x-1 relative font-medium text-lg transition-colors duration-200 ${
+                        isActive 
+                          ? 'text-primary-600' 
+                          : 'text-gray-700 hover:text-primary-600'
+                      }`}
+                    >
+                      <span>{item.name}</span>
+                      <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${
+                        isDropdownOpen ? 'rotate-180' : ''
+                      }`} />
+                      {isActive && (
+                        <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-primary-600 rounded-full"></span>
+                      )}
+                    </button>
+                    
+                    {isDropdownOpen && (
+                      <div className="absolute top-full left-0 pt-1 w-52 z-50">
+                        <div className="bg-white rounded-lg shadow-lg border border-gray-100 py-2">
+                          {item.dropdown.map((subItem) => (
+                            <Link
+                              key={subItem.name}
+                              href={subItem.href}
+                              className={`block px-4 py-3 text-base font-medium transition-colors duration-200 ${
+                                pathname === subItem.href
+                                  ? 'text-primary-600 bg-primary-50'
+                                  : 'text-gray-700 hover:text-primary-600 hover:bg-gray-50'
+                              }`}
+                            >
+                              {subItem.name}
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                );
+              }
+              
               return (
                 <Link
                   key={item.name}
@@ -102,7 +170,40 @@ export default function Navigation() {
           <div className="lg:hidden absolute top-full left-0 right-0 bg-white/95 backdrop-blur-xl border-b border-gray-100 shadow-lg">
             <div className="px-6 py-8 space-y-6">
               {navigation.map((item) => {
-                const isActive = pathname === item.href;
+                const isActive = isDropdownItemActive(item);
+                
+                if (item.dropdown) {
+                  return (
+                    <div key={item.name} className="space-y-2">
+                      <div
+                        className={`text-xl font-medium transition-colors duration-200 ${
+                          isActive 
+                            ? 'text-primary-600' 
+                            : 'text-gray-700'
+                        }`}
+                      >
+                        {item.name}
+                      </div>
+                      <div className="pl-4 space-y-2">
+                        {item.dropdown.map((subItem) => (
+                          <Link
+                            key={subItem.name}
+                            href={subItem.href}
+                            className={`block text-lg font-medium transition-colors duration-200 ${
+                              pathname === subItem.href
+                                ? 'text-primary-600'
+                                : 'text-gray-600 hover:text-primary-600'
+                            }`}
+                            onClick={() => setIsMenuOpen(false)}
+                          >
+                            {subItem.name}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  );
+                }
+                
                 return (
                   <Link
                     key={item.name}

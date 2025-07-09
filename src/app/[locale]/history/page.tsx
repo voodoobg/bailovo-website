@@ -20,7 +20,9 @@ export default function HistoryPage() {
           {/* Introduction */}
           <div className="bg-secondary-100 rounded-lg p-8 mb-12">
             <p className="text-xl leading-relaxed text-gray-700 mb-0">
-              {t('content')}
+              {t('content')}<br /><br />
+              {t('content2')}<br /><br />
+              {t('content3')}
             </p>
           </div>
 
@@ -97,6 +99,15 @@ export default function HistoryPage() {
                 </div>
               </div>
             </div>
+          </div>
+          <div className="bg-secondary-100 rounded-lg p-8 mb-12">
+            <p className="text-xl leading-relaxed text-gray-700 mb-0">
+              {t('content4')}<br /><br />
+              {t('content5')}<br /><br />
+              {t('content6')}<br /><br />
+              {t('content7')}<br /><br />
+              {t('content8')}
+            </p>
           </div>
 
           {/* Cultural Heritage */}

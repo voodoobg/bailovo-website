@@ -2,20 +2,59 @@ import { WPPost, cleanWPContent, extractExcerpt } from '@/lib/wordpress';
 import { NewsItem, EventItem } from './mockData';
 
 /**
- * Strip HTML tags and entities from content
+ * Preserve formatting HTML tags while cleaning content
  */
-function stripHtml(html: string): string {
-  return html
-    .replace(/<[^>]*>/g, '') // Remove HTML tags
-    .replace(/&nbsp;/g, ' ') // Replace &nbsp; with spaces
-    .replace(/&amp;/g, '&') // Replace &amp; with &
-    .replace(/&lt;/g, '<') // Replace &lt; with <
-    .replace(/&gt;/g, '>') // Replace &gt; with >
-    .replace(/&quot;/g, '"') // Replace &quot; with "
-    .replace(/&#39;/g, "'") // Replace &#39; with '
-    .replace(/&hellip;/g, '...') // Replace &hellip; with ...
-    .replace(/\s+/g, ' ') // Replace multiple spaces with single space
+function preserveFormattingHtml(html: string): string {
+  // List of allowed HTML tags for formatting
+  const allowedTags = [
+    'p', 'br', 'strong', 'b', 'em', 'i', 'u', 'span',
+    'h1', 'h2', 'h3', 'h4', 'h5', 'h6',
+    'ul', 'ol', 'li',
+    'a', 'blockquote'
+  ];
+  
+  // Store allowed tags temporarily
+  const preservedTags: string[] = [];
+  
+  // Create regex pattern for allowed tags
+  const allowedTagsPattern = allowedTags.join('|');
+  const allowedTagRegex = new RegExp(`<(/?)\\s*(${allowedTagsPattern})(?:\\s[^>]*)?\\s*/?>`, 'gi');
+  
+  // Replace allowed tags with placeholders and store them
+  let cleanHtml = html.replace(allowedTagRegex, (match) => {
+    const index = preservedTags.length;
+    preservedTags.push(match);
+    return `__PRESERVED_TAG_${index}__`;
+  });
+  
+  // Remove all remaining HTML tags (these are not allowed)
+  cleanHtml = cleanHtml.replace(/<[^>]*>/g, '');
+  
+  // Restore the preserved tags
+  preservedTags.forEach((tag, index) => {
+    cleanHtml = cleanHtml.replace(`__PRESERVED_TAG_${index}__`, tag);
+  });
+  
+  // Clean up HTML entities
+  cleanHtml = cleanHtml
+    .replace(/&nbsp;/g, '<br>')  // Convert &nbsp; to line breaks
+    .replace(/&amp;/g, '&')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&hellip;/g, '...')
+    .replace(/&rsquo;/g, "'")
+    .replace(/&lsquo;/g, "'")
+    .replace(/&rdquo;/g, '"')
+    .replace(/&ldquo;/g, '"')
+    .replace(/&ndash;/g, '–')
+    .replace(/&mdash;/g, '—')
+    // Clean up multiple spaces and normalize whitespace
+    .replace(/\s+/g, ' ')
     .trim();
+    
+  return cleanHtml;
 }
 
 /**
@@ -30,8 +69,8 @@ export function wpPostToNewsItem(post: WPPost): NewsItem {
   // Extract clean content and excerpt
   const cleanContent = cleanWPContent(post.content.rendered);
   const excerpt = post.excerpt.rendered 
-    ? stripHtml(cleanWPContent(post.excerpt.rendered))
-    : stripHtml(extractExcerpt(cleanContent));
+    ? preserveFormattingHtml(cleanWPContent(post.excerpt.rendered))
+    : preserveFormattingHtml(extractExcerpt(cleanContent));
 
   return {
     id: post.id.toString(),
@@ -63,8 +102,8 @@ export function wpPostToEventItem(post: WPPost): EventItem {
   // Extract clean content and excerpt
   const cleanContent = cleanWPContent(post.content.rendered);
   const excerpt = post.excerpt.rendered 
-    ? stripHtml(cleanWPContent(post.excerpt.rendered))
-    : stripHtml(extractExcerpt(cleanContent));
+    ? preserveFormattingHtml(cleanWPContent(post.excerpt.rendered))
+    : preserveFormattingHtml(extractExcerpt(cleanContent));
 
   // Extract event-specific data from ACF fields
   const acf = post.acf || {};

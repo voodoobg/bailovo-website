@@ -110,15 +110,15 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
             <div className="text-white">
               <div className="text-5xl font-black mb-4">150+</div>
-              <p className="text-xl text-secondary-100 font-light">{t('stats.history')}</p>
+              <p className="text-xl text-secondary-100 text-bold font-bold">{t('stats.history')}</p>
             </div>
             <div className="text-white">
-              <div className="text-5xl font-black mb-4">250+</div>
-              <p className="text-xl text-secondary-100 font-light">{t('stats.residents')}</p>
+              <div className="text-5xl font-black mb-4">410+</div>
+              <p className="text-xl text-secondary-100 font-bold">{t('stats.residents')}</p>
             </div>
             <div className="text-white">
               <div className="text-5xl font-black mb-4">24/7</div>
-              <p className="text-xl text-secondary-100 font-light">{t('stats.community')}</p>
+              <p className="text-xl text-secondary-100 font-bold">{t('stats.community')}</p>
             </div>
           </div>
         </div>

@@ -202,9 +202,9 @@ export default function NewsEventsWidget() {
                         {getLocalizedText(article.title, article.titleEn)}
                       </h4>
                       
-                      <p className="text-gray-600 mb-6 leading-relaxed">
-                        {getLocalizedText(article.excerpt, article.excerptEn)}
-                      </p>
+                      <p className="text-gray-600 mb-6 leading-relaxed" dangerouslySetInnerHTML={{
+                        __html: getLocalizedText(article.excerpt, article.excerptEn)
+                      }}></p>
                       
                       <Link 
                         href={`/${locale}/news/${article.id}`}

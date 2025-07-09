@@ -133,8 +133,57 @@ export default function EventsPage() {
     return locale === 'bg' ? text : textEn;
   };
 
-  const stripHtml = (html: string) => {
-    return html.replace(/<[^>]*>/g, '').replace(/&nbsp;/g, ' ').trim();
+  const preserveFormattingHtml = (html: string) => {
+    // List of allowed HTML tags for formatting
+    const allowedTags = [
+      'p', 'br', 'strong', 'b', 'em', 'i', 'u', 'span',
+      'h1', 'h2', 'h3', 'h4', 'h5', 'h6',
+      'ul', 'ol', 'li',
+      'a', 'blockquote'
+    ];
+    
+    // Store allowed tags temporarily
+    const preservedTags: string[] = [];
+    
+    // Create regex pattern for allowed tags
+    const allowedTagsPattern = allowedTags.join('|');
+    const allowedTagRegex = new RegExp(`<(/?)\\s*(${allowedTagsPattern})(?:\\s[^>]*)?\\s*/?>`, 'gi');
+    
+    // Replace allowed tags with placeholders and store them
+    let cleanHtml = html.replace(allowedTagRegex, (match) => {
+      const index = preservedTags.length;
+      preservedTags.push(match);
+      return `__PRESERVED_TAG_${index}__`;
+    });
+    
+    // Remove all remaining HTML tags (these are not allowed)
+    cleanHtml = cleanHtml.replace(/<[^>]*>/g, '');
+    
+    // Restore the preserved tags
+    preservedTags.forEach((tag, index) => {
+      cleanHtml = cleanHtml.replace(`__PRESERVED_TAG_${index}__`, tag);
+    });
+    
+    // Clean up HTML entities
+    cleanHtml = cleanHtml
+      .replace(/&nbsp;/g, '<br>')  // Convert &nbsp; to line breaks
+      .replace(/&amp;/g, '&')
+      .replace(/&lt;/g, '<')
+      .replace(/&gt;/g, '>')
+      .replace(/&quot;/g, '"')
+      .replace(/&#39;/g, "'")
+      .replace(/&hellip;/g, '...')
+      .replace(/&rsquo;/g, "'")
+      .replace(/&lsquo;/g, "'")
+      .replace(/&rdquo;/g, '"')
+      .replace(/&ldquo;/g, '"')
+      .replace(/&ndash;/g, '–')
+      .replace(/&mdash;/g, '—')
+      // Clean up multiple spaces and normalize whitespace
+      .replace(/\s+/g, ' ')
+      .trim();
+      
+    return cleanHtml;
   };
 
   const isUpcoming = (dateString: string) => {
@@ -352,9 +401,9 @@ export default function EventsPage() {
                         )}
                       </div>
                       
-                                          <p className="text-gray-600 mb-4 line-clamp-3">
-                      {stripHtml(getLocalizedText(event.excerpt, event.excerptEn))}
-                    </p>
+                                          <p className="text-gray-600 mb-4 line-clamp-3" dangerouslySetInnerHTML={{
+                      __html: preserveFormattingHtml(getLocalizedText(event.excerpt, event.excerptEn))
+                    }}></p>
                       
                       <div className="flex items-center text-secondary-600 group-hover:text-secondary-700 font-medium transition-colors duration-200">
                         {locale === 'bg' ? 'Виж детайли' : 'View Details'}
@@ -446,9 +495,9 @@ export default function EventsPage() {
                         </div>
                       </div>
                       
-                      <p className="text-gray-600 text-base mb-4 line-clamp-3">
-                        {stripHtml(getLocalizedText(event.excerpt, event.excerptEn))}
-                      </p>
+                      <p className="text-gray-600 text-base mb-4 line-clamp-3" dangerouslySetInnerHTML={{
+                        __html: preserveFormattingHtml(getLocalizedText(event.excerpt, event.excerptEn))
+                      }}></p>
                       
                       <div className="flex items-center text-secondary-600 group-hover:text-secondary-700 text-base font-medium transition-colors duration-200">
                         {locale === 'bg' ? 'Виж детайли' : 'View Details'}

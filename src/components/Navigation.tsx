@@ -31,6 +31,11 @@ export default function Navigation() {
       dropdown: [
         { name: t('news'), href: `/${locale}/news` },
         { name: t('events'), href: `/${locale}/events` },
+        { name: t('mayoralty'), href: `/${locale}/mayoralty` },
+        { name: t('church'), href: `/${locale}/church` },
+        { name: t('establishments'), href: `/${locale}/establishments` },
+        { name: t('nature'), href: `/${locale}/nature` },
+        { name: t('tourism'), href: `/${locale}/tourism` },
       ]
     },
     { name: t('contact'), href: `/${locale}/contact` },

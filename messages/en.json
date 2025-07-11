@@ -2,11 +2,16 @@
   "navigation": {
     "home": "Home",
     "history": "History",
-    "culture": "Cultural Center",
+    "culture": "Cultural Center \"Elin Pelin – 1922\"",
     "museum": "Elin Pelin Museum",
     "information": "Information",
     "news": "News",
     "events": "Events",
+    "mayoralty": "Mayoralty",
+    "church": "Church",
+    "establishments": "Establishments",
+    "nature": "Nature",
+    "tourism": "Tourism",
     "contact": "Contact"
   },
   "homepage": {
@@ -54,10 +59,19 @@
       "description": "Experience the history, culture, and beauty of Elin Pelin's birthplace"
     }
   },
+  
   "history": {
-    "title": "History of Bailovo Village",
-    "content": "Bailovo village has a rich history that spans centuries. The village is best known as the birthplace of Dimitar Ivanov Stoyanov, better known by his pseudonym Elin Pelin, born on July 8, 1877."
+    "title": "History of the Village of Bailovo",
+    "content": "The village of Bailovo, birthplace of the classic Bulgarian writer Elin Pelin, is located east of the municipal center Gorna Malina and 43 km east of Sofia. It is situated in the western forested branches of the Ihtiman section of Sredna Gora mountain. The writer wrote: 'My native village lies directly facing the sun in a beautiful place, where Sredna Gora separates from its mother, the Balkan Mountain, and heads eastward…'",
+    "content2": "Bailovo has existed since the 12th century. Initially, it was settled a little to the south, about 500–600 meters west of today’s village, in the river valley around the chapel 'St. Trinity.' The hill that is believed to have been the village center is called 'The Monastery,' and according to old legends, the monastery of 'St. George' was located there. It lasted until 1792, until the uprising against the Turks led by Bulgarian Muslims Mehmed Sinab and Dertli Mehmed.",
+    "content3": "The greatest contribution to the study of the history of Bailovo was made by Doctor of Archaeological Sciences, Elin Pelin's cousin – Ivan Velkov. According to Velkov’s long-term research, the area called 'Andreshko’s Swamp' by the locals was scattered with many small mounds — an indication of a large necropolis. The clay vessels, bronze and iron artifacts found in them confirm that the necropolis can be dated to the early 4th century BC, the so-called 'Second Iron Age.'",
+    "content4": "About 3 km east of Bailovo lies the area 'Klenov Dol,' where fragments of clay vessels and coins from the later Roman period are often found, confirming the existence of an ancient settlement there.",
+    "content5": "Information about Bailovo from more recent times can be found in the firman of Sultan Ahmed Khan III from 1721. In the lists of villages assigned with the duty of 'dervendji' (road guardians), Bailovo is mentioned as being responsible for providing guards for the detachment of Buluk Bashi Nedyalko from Sofia.",
+    "content6": "Today’s Bailovo was settled around 1815. Its beginnings were laid by Elin Pelin’s great-grandfather – Kara Stanyo Ivanov from the Bolchova neighborhood of the village of Poibrene, in the Panagyurishte region. At first, he came to these places to hide his sheep from the Turkish tax collectors. He initially founded a settlement in the area 'Klenov Dol,' but later moved to the current location because it was warmer, more secluded, and had good pastures and abundant water. There is also a large, vigorous spring here that gives rise to the Bailovo River, at the lower end of which there were four watermills.",
+    "content7": "The number of residents with permanent address registration is 240, and those with current address registration is 411 (according to GRAO as of 02.02.2023). More than 140 people live in the village without registered address.",
+    "content8": "Bailovo primarily engages in crop farming, while livestock farming has declined. Bailovo is a green, clean, and tidy village. Its natural features make it an attractive place for relaxation and tourism."
   },
+
   "museum": {
     "title": "Elin Pelin Museum",
     "description": "The birthplace of Elin Pelin in Bailovo village has been converted into a museum that showcases the life and work of the writer."

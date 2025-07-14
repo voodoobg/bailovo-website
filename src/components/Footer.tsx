@@ -2,7 +2,8 @@
 
 import { useLocale } from 'next-intl';
 import Link from 'next/link';
-import { MapPin, Phone, Mail, Globe, ArrowRight } from 'lucide-react';
+import { MapPin, Phone, Mail, Globe } from 'lucide-react';
+import Image from 'next/image';
 
 export default function Footer() {
   const locale = useLocale();
@@ -14,10 +15,17 @@ export default function Footer() {
           {/* Brand & Description */}
           <div>
             <div className="flex items-center space-x-3 mb-8">
-              <div className="w-12 h-12 bg-gradient-to-r from-secondary-500 to-secondary-600 rounded-2xl flex items-center justify-center">
-                <span className="text-white font-black text-xl">Б</span>
-              </div>
-              <span className="font-bold text-3xl text-white">Байлово</span>
+              <Link href={`/${locale}`} className="flex mt-3 items-center space-x-3 group">
+                <div className="relative w-[250px] h-12 transform group-hover:scale-105 transition-transform duration-200">
+                  <Image
+                    src="/logo3.png"
+                    alt="с. Байлово"
+                    fill
+                    className="object-cover"
+                    priority
+                  />
+                </div>
+              </Link>
             </div>
             <p className="text-xl text-gray-300 leading-relaxed mb-8 max-w-md">
               {locale === 'bg' 
@@ -74,7 +82,7 @@ export default function Footer() {
                 {locale === 'bg' ? 'Контакти' : 'Contact'}
               </h3>
               <div className="space-y-6">
-                <div className="flex items-start space-x-3">
+                <div className="flex items-center space-x-3">
                   <MapPin className="w-5 h-5 text-secondary-500 mt-1 flex-shrink-0" />
                   <div>
                     <p className="text-gray-300 text-lg leading-relaxed">
@@ -84,15 +92,15 @@ export default function Footer() {
                 </div>
                 <div className="flex items-center space-x-3">
                   <Phone className="w-5 h-5 text-secondary-500 flex-shrink-0" />
-                  <span className="text-gray-300 text-lg">+359 XXX XXX XXX</span>
+                  <span className="text-gray-300 text-lg"><a href="tel:+359876734728">+359 876 734 728</a></span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Mail className="w-5 h-5 text-secondary-500 flex-shrink-0" />
-                  <span className="text-gray-300 text-lg">info@bailovo.eu</span>
+                  <span className="text-gray-300 text-lg"><a href="mailto:info@bailovo.eu">info@bailovo.eu</a></span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Globe className="w-5 h-5 text-secondary-500 flex-shrink-0" />
-                  <span className="text-gray-300 text-lg">www.bailovo.eu</span>
+                  <span className="text-gray-300 text-lg"><a href="https://www.bailovo.eu">www.bailovo.eu</a></span>
                 </div>
               </div>
             </div>

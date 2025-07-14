@@ -18,7 +18,7 @@ export default function Navigation() {
   const locale = useLocale();
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
   const navigation: NavigationItem[] = [
     { name: t('home'), href: `/${locale}` },
@@ -26,19 +26,26 @@ export default function Navigation() {
     { name: t('culture'), href: `/${locale}/culture` },
     { name: t('museum'), href: `/${locale}/museum` },
     { 
+      name: t('attractions'), 
+      href: '#', 
+      dropdown: [
+        { name: t('church'), href: `/${locale}/church` },
+        { name: t('chapel'), href: `/${locale}/chapel` },
+        { name: t('nature'), href: `/${locale}/nature` },
+        { name: t('tourism'), href: `/${locale}/tourism` },
+      ]
+    },
+    { 
       name: t('information'), 
       href: '#', 
       dropdown: [
         { name: t('news'), href: `/${locale}/news` },
         { name: t('events'), href: `/${locale}/events` },
         { name: t('mayoralty'), href: `/${locale}/mayoralty` },
-        { name: t('church'), href: `/${locale}/church` },
         { name: t('establishments'), href: `/${locale}/establishments` },
-        { name: t('nature'), href: `/${locale}/nature` },
-        { name: t('tourism'), href: `/${locale}/tourism` },
       ]
     },
-    { name: t('contact'), href: `/${locale}/contact` },
+    { name: t('gallery'), href: `/${locale}/gallery` },
   ];
 
   const otherLocale = locale === 'bg' ? 'en' : 'bg';
@@ -74,12 +81,13 @@ export default function Navigation() {
               const isActive = isDropdownItemActive(item);
               
               if (item.dropdown) {
+                const isDropdownOpen = openDropdown === item.name;
                 return (
                   <div 
                     key={item.name}
                     className="relative"
-                    onMouseEnter={() => setIsDropdownOpen(true)}
-                    onMouseLeave={() => setIsDropdownOpen(false)}
+                    onMouseEnter={() => setOpenDropdown(item.name)}
+                    onMouseLeave={() => setOpenDropdown(null)}
                   >
                     <button
                       className={`flex items-center space-x-1 relative font-medium text-lg transition-colors duration-200 ${

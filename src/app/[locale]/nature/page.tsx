@@ -1,5 +1,5 @@
 import { useLocale } from 'next-intl';
-import { TreePine, Mountain, Flower, Bird, Camera, MapPin, Clock, Compass } from 'lucide-react';
+import { TreePine, Mountain, Flower, Bird, Camera, Clock, Compass } from 'lucide-react';
 
 export default function NaturePage() {
   const locale = useLocale();

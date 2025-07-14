@@ -4,14 +4,17 @@
     "history": "History",
     "culture": "Cultural Center \"Elin Pelin – 1922\"",
     "museum": "Elin Pelin Museum",
+    "attractions": "Attractions",
     "information": "Information",
     "news": "News",
     "events": "Events",
     "mayoralty": "Mayoralty",
     "church": "Church",
+    "chapel": "Chapel \"Holy Trinity\"",
     "establishments": "Establishments",
     "nature": "Nature",
     "tourism": "Tourism",
+    "gallery": "Gallery",
     "contact": "Contact"
   },
   "homepage": {
@@ -22,10 +25,12 @@
     },
     "about": {
       "title": "About Bailovo Village",
-      "description": "Bailovo is a small but historic village in Sofia Province, best known as the birthplace of the renowned Bulgarian writer Elin Pelin (Dimitar Ivanov Stoyanov). The village is located in a picturesque area, surrounded by green hills and rich history."
+      "description": "Bailovo is a small but historic village in Sofia Province, best known as the birthplace of the renowned Bulgarian writer Elin Pelin (Dimitar Ivanov Stoyanov). The village is located in a picturesque area, surrounded by green hills and rich history.",
+      "description2": "\"Here in this wonderful corner I was born, here I learned our beautiful language, here I heard the wonderful Bulgarian song, embroidered with the beauty of the most beautiful words. Here I got to know our hardworking people, our people – the Bulgarian – and their broad, virtuous, responsive soul… Here my heart trembled with love for our beautiful and naturally blessed homeland…\""
     },
     "highlights": {
       "title": "Highlights",
+      "subtitle": "Discover the rich heritage and vibrant culture of our beloved village",
       "museum": {
         "title": "Elin Pelin Museum",
         "description": "Visit the birthplace of the great writer, converted into a museum"
@@ -65,13 +70,29 @@
   "history": {
     "title": "History of the Village of Bailovo",
     "content": "The village of Bailovo, birthplace of the classic Bulgarian writer Elin Pelin, is located east of the municipal center Gorna Malina and 43 km east of Sofia. It is situated in the western forested branches of the Ihtiman section of Sredna Gora mountain. The writer wrote: 'My native village lies directly facing the sun in a beautiful place, where Sredna Gora separates from its mother, the Balkan Mountain, and heads eastward…'",
-    "content2": "Bailovo has existed since the 12th century. Initially, it was settled a little to the south, about 500–600 meters west of today’s village, in the river valley around the chapel 'St. Trinity.' The hill that is believed to have been the village center is called 'The Monastery,' and according to old legends, the monastery of 'St. George' was located there. It lasted until 1792, until the uprising against the Turks led by Bulgarian Muslims Mehmed Sinab and Dertli Mehmed.",
-    "content3": "The greatest contribution to the study of the history of Bailovo was made by Doctor of Archaeological Sciences, Elin Pelin's cousin – Ivan Velkov. According to Velkov’s long-term research, the area called 'Andreshko’s Swamp' by the locals was scattered with many small mounds — an indication of a large necropolis. The clay vessels, bronze and iron artifacts found in them confirm that the necropolis can be dated to the early 4th century BC, the so-called 'Second Iron Age.'",
+    "content2": "Bailovo has existed since the 12th century. Initially, it was settled a little to the south, about 500–600 meters west of today's village, in the river valley around the chapel 'St. Trinity.' The hill that is believed to have been the village center is called 'The Monastery,' and according to old legends, the monastery of 'St. George' was located there. It lasted until 1792, until the uprising against the Turks led by Bulgarian Muslims Mehmed Sinab and Dertli Mehmed.",
+    "content3": "The greatest contribution to the study of the history of Bailovo was made by Doctor of Archaeological Sciences, Elin Pelin's cousin – Ivan Velkov. According to Velkov's long-term research, the area called 'Andreshko's Swamp' by the locals was scattered with many small mounds — an indication of a large necropolis. The clay vessels, bronze and iron artifacts found in them confirm that the necropolis can be dated to the early 4th century BC, the so-called 'Second Iron Age.'",
     "content4": "About 3 km east of Bailovo lies the area 'Klenov Dol,' where fragments of clay vessels and coins from the later Roman period are often found, confirming the existence of an ancient settlement there.",
     "content5": "Information about Bailovo from more recent times can be found in the firman of Sultan Ahmed Khan III from 1721. In the lists of villages assigned with the duty of 'dervendji' (road guardians), Bailovo is mentioned as being responsible for providing guards for the detachment of Buluk Bashi Nedyalko from Sofia.",
-    "content6": "Today’s Bailovo was settled around 1815. Its beginnings were laid by Elin Pelin’s great-grandfather – Kara Stanyo Ivanov from the Bolchova neighborhood of the village of Poibrene, in the Panagyurishte region. At first, he came to these places to hide his sheep from the Turkish tax collectors. He initially founded a settlement in the area 'Klenov Dol,' but later moved to the current location because it was warmer, more secluded, and had good pastures and abundant water. There is also a large, vigorous spring here that gives rise to the Bailovo River, at the lower end of which there were four watermills.",
+    "content6": "Today's Bailovo was settled around 1815. Its beginnings were laid by Elin Pelin's great-grandfather – Kara Stanyo Ivanov from the Bolchova neighborhood of the village of Poibrene, in the Panagyurishte region. At first, he came to these places to hide his sheep from the Turkish tax collectors. He initially founded a settlement in the area 'Klenov Dol,' but later moved to the current location because it was warmer, more secluded, and had good pastures and abundant water. There is also a large, vigorous spring here that gives rise to the Bailovo River, at the lower end of which there were four watermills.",
     "content7": "The number of residents with permanent address registration is 240, and those with current address registration is 411 (according to GRAO as of 02.02.2023). More than 140 people live in the village without registered address.",
-    "content8": "Bailovo primarily engages in crop farming, while livestock farming has declined. Bailovo is a green, clean, and tidy village. Its natural features make it an attractive place for relaxation and tourism."
+    "content8": "Bailovo primarily engages in crop farming, while livestock farming has declined. Bailovo is a green, clean, and tidy village. Its natural features make it an attractive place for relaxation and tourism.",
+    "historical_moments": "Historical Moments",
+    "timeline": {
+      "1877_title": "1877",
+      "1877_content": "On July 18, 1877, Dimitar Ivanov Stoyanov was born in Bailovo village, later known by the pseudonym Elin Pelin. This event put the village on Bulgaria's literary map.",
+      "medieval_title": "Medieval Period",
+      "medieval_content": "During the medieval period, the village was part of important trade routes connecting Sofia with the southern parts of the Bulgarian Empire. Archaeological finds testify to rich commercial activity.",
+      "ottoman_title": "Ottoman Period",
+      "ottoman_content": "During Ottoman rule, the village preserved its Bulgarian identity. The local population was mainly engaged in agriculture and livestock farming.",
+      "20th_century_title": "20th Century",
+      "20th_century_content": "After the Liberation, the village continued to develop as an agricultural center. New buildings were constructed, education and culture developed. Elin Pelin's birthplace was converted into a literary museum."
+    },
+    "cultural_heritage": "Cultural Heritage",
+    "architecture_title": "Architecture",
+    "architecture_content": "The village preserves the characteristic 19th-century architecture of the region. Traditional houses with stone foundations and wooden upper floors.",
+    "traditions_title": "Traditions",
+    "traditions_content": "Bailovo has preserved many of the ancient Bulgarian traditions and customs. Holidays are celebrated in the traditional way, and folklore is passed down from generation to generation."
   },
 
   "museum": {
@@ -80,7 +101,136 @@
   },
   "culture": {
     "title": "Cultural Center",
-    "description": "The cultural center is the heart of community activities in Bailovo village."
+    "description": "The cultural center is the heart of community activities in Bailovo village.",
+    "hero_title": "Community Center \"Elin Pelin-1922\"",
+    "hero_description": "The heart of cultural life in Bailovo village - a place where tradition meets modernity, and spiritual heritage is passed from generation to generation",
+    "services_title": "Activities, services and opportunities",
+    "services": {
+      "library": {
+        "title": "Librarianship",
+        "description": "A rich library with over 16,240 volumes of diverse literature."
+      },
+      "information": {
+        "title": "Information Services",
+        "description": "Access to information and online resources, electronic services, assistance with job search, preparation and completion of documents."
+      },
+      "events": {
+        "title": "Exhibitions & Events",
+        "description": "Organization of exhibitions, celebrations and events for all ages."
+      },
+      "theater": {
+        "title": "Theater Productions",
+        "description": "Rich theatrical tradition with roots from Elin Pelin's time."
+      },
+      "folklore": {
+        "title": "Folk Performances",
+        "description": "Preservation of over 800 Bailovo songs, customs and rituals."
+      },
+      "festivals": {
+        "title": "Regional Festivals",
+        "description": "Host of \"He Who Laughs, Lives Long\" and other significant events."
+      }
+    },
+    "history_title": "Rich History of Over a Century",
+    "timeline": {
+      "1922": {
+        "title": "Foundation",
+        "description": "On December 10, patriotic and enthusiastic Bailovo residents, on Elin Pelin's proposal, founded the Community Center \"Elin Pelin - 1922\". Zachary Velkov was elected as the first chairman."
+      },
+      "1922-1928": {
+        "title": "Early Years in the Birth Home",
+        "description": "During the first 6 years, the center was housed in Elin Pelin's birth home. The first books were donated by the Ministry of Public Education with Minister Stoyan Omarchevski, who also approved the charter. Equipment inventory was collected from Bailovo donors."
+      },
+      "1895-1928": {
+        "title": "Educational Period",
+        "description": "The center was the first and only spiritual center in Bailovo at that time. Evening readings of stories by Elin Pelin, Ivan Vazov and others were held. Theatrical activities began in 1895 when Elin Pelin was a teacher in the village and played the role of Levski in \"The Hanging of Levski\"."
+      },
+      "1940s": {
+        "title": "New Energy under Dimitar Yonchev's Leadership",
+        "description": "Center activities were taken over by Dimitar Yonchev. Readings were organized that went beyond the center's framework - reading sessions were held at gatherings. The first battery radio in the village was purchased."
+      },
+      "1944-1950": {
+        "title": "Period of Active Work",
+        "description": "After 1944, a period of active work began. Surviving books were collected, a youth choir was created, and many plays were performed. Cultural activities flourished with new scope."
+      },
+      "1950": {
+        "title": "Institutional Partnership",
+        "description": "BBI \"Elin Pelin\" with then-director T. Borov took patronage over the center. Many books were donated. Connections were established with the Institute for Foreign Literature in Moscow."
+      },
+      "1961": {
+        "title": "Library Modernization",
+        "description": "Free access to books in the library was established. Active work began on documenting local history and folklore."
+      },
+      "1960-1970": {
+        "title": "Cultural Heritage Collection",
+        "description": "The history of Bailovo village was written. Over 800 Bailovo songs were collected and notated, customs and rituals were recorded. Nikola Stoev collected and published through BAS archival materials - \"The Prototypes of Elin Pelin's Heroes\"."
+      },
+      "1977": {
+        "title": "Memorial House \"Elin Pelin\"",
+        "description": "On November 11, the Memorial House \"Elin Pelin\" was opened, built in honor of the 100th anniversary of Elin Pelin's birth, along with the restored birth home-museum. Since opening, hundreds of thousands of visitors from all over the country and abroad have passed through."
+      }
+    },
+    "main_activity_title": "Main Activities",
+    "main_activity_content1": "The main activity of the community center is librarianship, development and support of amateur artistic creativity, organization of exhibitions, celebrations and events for children and adults. We preserve local folklore and customs in the center. We carry out collecting activities. The center has preserved Bulgarian identity and national spirit over the years, continuing to be a center of creative activity and communication among workers, youth and children. We recreate local customs and traditions, marking all significant holidays with appropriate events. Today the customs are still recreated here - \"Lazaruvane\", \"Caroling\", \"Survakari\". Amateur performers play an important role in the center's work. Hundreds of amateur talents have passed through the school of amateur folk art at the center, who still delight audiences with their wonderful performances. It is a tradition to mark and conduct \"Grandmother's Day\", \"Trifon Zarezan\" and \"Best Homemade Wine\" competition, Martenitsa and Amateur Day, March 8th, homage to the Apostle's work, Bulgaria's National Holiday, Educational competition \"I Love Bulgaria\", Children's Day, participation in organizing and conducting the Traditional Village Gathering, \"Fun Summer\" initiative, summer cinema \"Cinema under the Stars\", Christmas celebration, organizing exhibitions, celebrations, competitions and other events. Host and co-organizer of the Humor and Joke Festival \"He Who Laughs, Lives Long\", held annually on April 1st. Organizer of the annual tourist hike \"In Elin Pelin's Footsteps\", anniversaries of Elin Pelin's birth and death, etc.",
+    "main_activity_content2": "These cultural events contribute to the good social atmosphere in Bailovo village.",
+    "main_activity_content3": "LIBRARY - 16,243 documents library collection - specialized, reference, student, children's, fiction literature, free internet access - access to information, electronic services (help with job searching, filling out resumes, applications, declarations, copying documents and printing). Provides users with personal computers, printer, scanner, xerox, multimedia. Organizes exhibitions, literary meetings and events for children and the population of Bailovo.",
+    "main_activity_content4": "Now and in the future, through its artistic-creative and cultural-educational activities, Community Center \"Elin Pelin-1922\" will participate and influence the spiritual enrichment of Bailovo residents and the cultural development of Bailovo village in partnership with the Ministry of Culture, Sofia Library, \"Global Libraries\" Foundation, municipal leadership, Bailovo Mayor's Office, National Literary Museum, \"Elin Pelin\" house-museum, local business, non-governmental organizations, \"Blagoladh\" pensioners' club, church board, schools and community centers from the municipality.",
+    "main_activity_content5": "Financing is carried out through state and municipal subsidies. The center collects its own income through project funding, membership fees, reading fees and donations.",
+    "memorial_house_title": "Memorial House \"Elin Pelin\"",
+    "memorial_house_description1": "Opened on November 11, 1977, in honor of the 100th anniversary of Elin Pelin's birth. The memorial house is a unique cultural complex that combines modern facilities with historical heritage.",
+    "memorial_house_description2": "The museum exhibition \"Life and Work of Elin Pelin\" has been visited by hundreds of thousands of visitors from all over the country and abroad, becoming a true cultural magnet.",
+    "facilities_title": "Facilities",
+    "facilities": {
+      "cinema": "Cinema hall with 185 seats",
+      "library": "Library with 16,240 volumes",
+      "museum": "Museum exhibition",
+      "halls": "Small halls and dressing rooms",
+      "children": "Separate hall with children's corner"
+    },
+    "current_activities_title": "Current Activities",
+    "current_activities": {
+      "community": {
+        "title": "Community Events and Traditions",
+        "description": "Active participation in village life and cultural development of the community."
+      },
+      "holidays": {
+        "title": "Traditional Holidays",
+        "description": "Caroling, Survakari, Lazaruvane and other Bulgarian traditions."
+      },
+      "clubs": {
+        "title": "Clubs, Circles and Workshops",
+        "description": "\"Young Book Friend\", \"Young Nature Lover\", \"Talents Club\" and \"Applied, Art, Eco Workshops\"."
+      },
+      "amateur_arts": {
+        "title": "Amateur Arts",
+        "description": "School for amateur folk art with rich history."
+      }
+    },
+    "vision_title": "Vision for the Future",
+    "vision_description": "Through its artistic-creative and cultural-educational activities, Community Center \"Elin Pelin-1922\" will continue to participate in the spiritual enrichment of Bailovo residents and the cultural development of Bailovo village in partnership with local institutions and organizations.",
+    "partners": {
+      "municipal": "Municipal leadership",
+      "mayor": "Mayor's office",
+      "companies": "Local companies",
+      "pensioners": "Pensioners' organization",
+      "museum": "Museum workers"
+    },
+    "team_title": "Team",
+    "team_description": "Meet our dedicated team that works to preserve and develop the cultural heritage of Bailovo village",
+    "board_title": "Reading Club Board:",
+    "audit_commission_title": "Audit Commission:",
+    "contact_info": {
+      "title": "Contact Information and Working Hours",
+      "phone": "Phone: 0876734728",
+      "email": "e-mail: chitalishte.bailovo@abv.bg",
+      "working_hours": {
+        "title": "Working Hours:",
+        "weekdays": "Monday – Friday",
+        "morning": "08:30 – 12:30",
+        "afternoon": "14:00 – 18:00",
+        "weekend": "Closed: Saturday and Sunday"
+      }
+    }
   },
   "news": {
     "title": "News",
@@ -89,6 +239,13 @@
   "events": {
     "title": "Events",
     "upcoming": "Upcoming Events"
+  },
+  "gallery": {
+    "title": "Gallery",
+    "description": "Browse photos from life in Bailovo village",
+    "facebook_albums": "Facebook Albums",
+    "village_moments": "Village Moments",
+    "loading": "Loading..."
   },
   "contact": {
     "title": "Contact",
@@ -127,5 +284,23 @@
     "contact": "Contact",
     "address": "Bailovo Village, Sofia Province, Bulgaria",
     "rights": "© 2024 Bailovo Village. All rights reserved."
+  },
+  "chapel": {
+    "title": "Chapel \"Holy Trinity\"",
+    "description": "The historic Chapel \"Holy Trinity\" in Bailovo village is one of the oldest religious monuments in the area.",
+    "location_title": "Location",
+    "location_description": "The chapel is located about 500-600 meters west of today's village, in the picturesque river valley.",
+    "history_title": "History",
+    "history_description": "According to historical records, the chapel area was the original settlement of Bailovo from the 12th century. The locality is called \"The Monastery\" and according to old legends, the monastery of \"St. George\" was located here.",
+    "historical_importance": "Historical Importance",
+    "historical_importance_description": "The chapel is an important monument connected to the original history of the village. Archaeological research in the area confirms the ancient settlement of these places.",
+    "architecture_title": "Architecture",
+    "architecture_description": "The chapel is built in the traditional Bulgarian Orthodox style, characteristic of small rural churches from that era.",
+    "current_state_title": "Current State",
+    "current_state_description": "Today the chapel is maintained by the local community and represents an important place for religious and cultural events.",
+    "visiting_info_title": "Visiting Information",
+    "visiting_info_description": "The chapel can be visited year-round. We recommend contacting local residents for current information.",
+    "cultural_significance_title": "Cultural Significance",
+    "cultural_significance_description": "The chapel is an integral part of Bailovo village's cultural heritage and has an important place in local traditions."
   }
 } 

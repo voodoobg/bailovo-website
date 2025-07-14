@@ -1,6 +1,6 @@
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import Link from 'next/link';
-import { ArrowRight, Calendar, BookOpen, Users } from 'lucide-react';
+import { ArrowRight, TreePine, BookOpen, Plane } from 'lucide-react';
 import HeroSection from '@/components/HeroSection';
 import NewsEventsWidget from '@/components/NewsEventsWidget';
 import DebugPanel from '@/components/DebugPanel';
@@ -8,6 +8,7 @@ import DebugPanel from '@/components/DebugPanel';
 export default function HomePage() {
   const t = useTranslations('homepage');
   const tNav = useTranslations('navigation');
+  const locale = useLocale();
 
   return (
     <div className="min-h-screen">
@@ -17,13 +18,18 @@ export default function HomePage() {
       {/* About Section */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-20">
+          <div className="text-center">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 mb-8 leading-tight">
               {t('about.title')}
             </h2>
-            <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-light">
+            <span className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-light">
               {t('about.description')}
-            </p>
+              <br />
+              <br />
+              <div className="bg-secondary-100 rounded-lg p-8">
+                {t('about.description2')}
+              </div>
+            </span>
           </div>
         </div>
       </section>
@@ -36,7 +42,7 @@ export default function HomePage() {
               {t('highlights.title')}
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Discover the rich heritage and vibrant culture of our beloved village
+              {t('highlights.subtitle')}
             </p>
           </div>
 
@@ -61,30 +67,32 @@ export default function HomePage() {
               </Link>
             </div>
 
-            {/* Culture Card */}
+            {/* Tourism Card */}
             <div className="group bg-white rounded-3xl p-8 shadow-soft hover:shadow-strong transition-all duration-300 transform hover:-translate-y-2">
               <div className="w-16 h-16 bg-gradient-to-r from-secondary-500 to-secondary-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <Users className="w-8 h-8 text-white" />
+                <Plane className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                {t('highlights.culture.title')}
+                {locale === 'bg' ? 'Туризъм в Байлово' : 'Tourism in Bailovo'}
               </h3>
               <p className="text-gray-600 mb-8 text-lg leading-relaxed">
-                {t('highlights.culture.description')}
+              {locale === 'bg' 
+                ? 'Открийте родното място на Елин Пелин и красотата на българската природа'
+                : 'Discover the birthplace of Elin Pelin and the beauty of Bulgarian nature'}
               </p>
               <Link 
-                href="/bg/culture" 
+                href={`/${locale}/tourism`}
                 className="inline-flex items-center text-primary-600 hover:text-primary-700 font-semibold text-lg transition-all duration-200 group-hover:translate-x-2"
               >
-                {tNav('culture')}
+                {tNav('tourism')}
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Link>
             </div>
 
-            {/* Events Card */}
+            {/* Nature Card */}
             <div className="group bg-white rounded-3xl p-8 shadow-soft hover:shadow-strong transition-all duration-300 transform hover:-translate-y-2">
               <div className="w-16 h-16 bg-gradient-to-r from-secondary-500 to-secondary-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <Calendar className="w-8 h-8 text-white" />
+                <TreePine className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4">
                 {t('highlights.nature.title')}
@@ -93,10 +101,10 @@ export default function HomePage() {
                 {t('highlights.nature.description')}
               </p>
               <Link 
-                href="/bg/events" 
+                href={`/${locale}/nature`} 
                 className="inline-flex items-center text-primary-600 hover:text-primary-700 font-semibold text-lg transition-all duration-200 group-hover:translate-x-2"
               >
-                {tNav('events')}
+                {tNav('nature')}
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Link>
             </div>
@@ -109,7 +117,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
             <div className="text-white">
-              <div className="text-5xl font-black mb-4">150+</div>
+              <div className="text-5xl font-black mb-4">200+ години</div>
               <p className="text-xl text-secondary-100 text-bold font-bold">{t('stats.history')}</p>
             </div>
             <div className="text-white">

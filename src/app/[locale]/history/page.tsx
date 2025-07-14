@@ -28,7 +28,7 @@ export default function HistoryPage() {
 
           {/* Timeline */}
           <div className="mb-16">
-            <h2 className="text-3xl font-bold text-primary-600 mb-8">Исторически моменти</h2>
+            <h2 className="text-3xl font-bold text-primary-600 mb-8">{t('historical_moments')}</h2>
             
             <div className="space-y-8">
               {/* Timeline Item 1 */}
@@ -38,11 +38,9 @@ export default function HistoryPage() {
                 </div>
                 <div className="flex-grow">
                   <div className="bg-white rounded-lg shadow-soft p-6">
-                    <h3 className="text-xl font-semibold text-primary-600 mb-2">1877 г.</h3>
+                    <h3 className="text-xl font-semibold text-primary-600 mb-2">{t('timeline.1877_title')}</h3>
                     <p className="text-gray-600">
-                      На 8 юли 1877 г. в село Байлово се ражда Димитър Иванов Стоянов, 
-                      по-късно известен под псевдонима Елин Пелин. Това събитие поставя 
-                      селото на литературната карта на България.
+                      {t('timeline.1877_content')}
                     </p>
                   </div>
                 </div>
@@ -55,11 +53,9 @@ export default function HistoryPage() {
                 </div>
                 <div className="flex-grow">
                   <div className="bg-white rounded-lg shadow-soft p-6">
-                    <h3 className="text-xl font-semibold text-primary-600 mb-2">Средновековие</h3>
+                    <h3 className="text-xl font-semibold text-primary-600 mb-2">{t('timeline.medieval_title')}</h3>
                     <p className="text-gray-600">
-                      През Средновековието селото е било част от важните търговски пътища, 
-                      свързващи София с южните части на Българското царство. Археологическите 
-                      находки свидетелстват за богата търговска дейност.
+                      {t('timeline.medieval_content')}
                     </p>
                   </div>
                 </div>
@@ -72,11 +68,9 @@ export default function HistoryPage() {
                 </div>
                 <div className="flex-grow">
                   <div className="bg-white rounded-lg shadow-soft p-6">
-                    <h3 className="text-xl font-semibold text-primary-600 mb-2">Османски период</h3>
+                    <h3 className="text-xl font-semibold text-primary-600 mb-2">{t('timeline.ottoman_title')}</h3>
                     <p className="text-gray-600">
-                      По време на османското владичество селото запазва своята българска 
-                      идентичност. Местното население се занимава предимно със земеделие 
-                      и животновъдство.
+                      {t('timeline.ottoman_content')}
                     </p>
                   </div>
                 </div>
@@ -89,11 +83,9 @@ export default function HistoryPage() {
                 </div>
                 <div className="flex-grow">
                   <div className="bg-white rounded-lg shadow-soft p-6">
-                    <h3 className="text-xl font-semibold text-primary-600 mb-2">XX век</h3>
+                    <h3 className="text-xl font-semibold text-primary-600 mb-2">{t('timeline.20th_century_title')}</h3>
                     <p className="text-gray-600">
-                      След Освобождението селото продължава да се развива като земеделски 
-                      център. Строят се нови сгради, развива се образованието и културата. 
-                      Родната къща на Елин Пелин се превръща в литературен музей.
+                      {t('timeline.20th_century_content')}
                     </p>
                   </div>
                 </div>
@@ -112,22 +104,18 @@ export default function HistoryPage() {
 
           {/* Cultural Heritage */}
           <div className="bg-white rounded-lg shadow-strong p-8 mb-12">
-            <h2 className="text-3xl font-bold text-primary-600 mb-6">Културно наследство</h2>
+            <h2 className="text-3xl font-bold text-primary-600 mb-6">{t('cultural_heritage')}</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div>
-                <h3 className="text-xl font-semibold text-primary-600 mb-3">Архитектура</h3>
+                <h3 className="text-xl font-semibold text-primary-600 mb-3">{t('architecture_title')}</h3>
                 <p className="text-gray-600">
-                  Селото съхранява характерната за региона архитектура от XIX век. 
-                  Традиционните къщи с каменни основи и дървени етажи са типични 
-                  за Софийското поле.
+                  {t('architecture_content')}
                 </p>
               </div>
               <div>
-                <h3 className="text-xl font-semibold text-primary-600 mb-3">Традиции</h3>
+                <h3 className="text-xl font-semibold text-primary-600 mb-3">{t('traditions_title')}</h3>
                 <p className="text-gray-600">
-                  Байлово е запазило много от старинните български традиции и обичаи. 
-                  Празниците се честват по традиционния начин, а фолклорът се предава 
-                  от поколение на поколение.
+                  {t('traditions_content')}
                 </p>
               </div>
             </div>

@@ -162,7 +162,7 @@ export default function MuseumPage() {
                 </div>
                 <div>
                   <strong>Email:</strong><br />
-                  <a href="mailto:museum@bailovo.eu">museum@bailovo.eu</a>
+                  <a href="mailto:muzeielinpelin@abv.bg">muzeielinpelin@abv.bg</a>
                 </div>
               </div>
             </div>
@@ -217,12 +217,12 @@ export default function MuseumPage() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { title: "Геракини", year: "1911", description: "Сборник разкази за селския живот" },
-              { title: "Пижо и Пендо", year: "1913", description: "Детска приказка за две дечица" },
-              { title: "Земя", year: "1922", description: "Роман за българското село" },
-              { title: "Под игото на времето", year: "1928", description: "Разкази за социални проблеми" },
-              { title: "Ян Бибиян", year: "1933", description: "Популярна детска книга" },
-              { title: "Изгубеният клас", year: "1936", description: "Автобиографична повест" }
+              { title: "Гераците", year: "", description: "Повест" },
+              { title: "Пижо и Пендо", year: "", description: "Сборник хумористични разкази" },
+              { title: "Земя", year: "", description: "Повест" },
+              { title: "Под манастирската лоза", year: "", description: "Сборник разкази" },
+              { title: "Ян Бибиян", year: "", description: "Детски роман" },
+              { title: "Пепел от цигарите ми", year: "", description: "Сборник разкази" }
             ].map((work, index) => (
               <div key={index} className="bg-secondary-100 rounded-lg p-6">
                 <div className="flex items-center mb-3">

@@ -302,5 +302,78 @@
     "visiting_info_description": "The chapel can be visited year-round. We recommend contacting local residents for current information.",
     "cultural_significance_title": "Cultural Significance",
     "cultural_significance_description": "The chapel is an integral part of Bailovo village's cultural heritage and has an important place in local traditions."
+  },
+  "church": {
+    "hero": {
+      "title": "Church \"St. Cyril and Methodius\"",
+      "subtitle": "Orthodox Christian community in Bailovo village"
+    },
+    "about": {
+      "title": "Church History",
+      "description1": "Church \"St. Cyril and Methodius\" in Bailovo village was built in 1884 and serves as the spiritual center of the community. It is a cultural monument.",
+      "description2": "The church was not only a place of worship but also the first school in the village, where priest Nikola taught children and performed church ceremonies.",
+      "detailed_history_title": "Detailed History",
+      "detailed_history": "It was built by master builder Gancho Trifonov from Smolsko village in 1884. The hewn stones, placed around the doors and windows and at the corners of the building, were brought from Sarantsi village, located more than 10 km away. The church is single-nave with an altar, a common area, and a women's gallery built in its western part. Its ceiling was painted by Dimitar Petrov Bozhanchev, born on February 16, 1897 in Sarantsi village, Sofia region. He completed higher education at the pedagogical institute in Shumen, after which he taught in the villages of Negushevo, Osositsa and Sarantsi. He mainly taught drawing and singing, composed and conducted three-voice choirs, and collected folk songs. He spent most of his working time painting. He also had a hobby - repairing watches. Dimitar Bozhanchev died in his native village in 1964. The small-sized icons are the work of the famous iconographer of his time, Yoto (Ivan) Nedelkov Yonchov from Makotsevo village, called Yoto the Icon Painter for short. He worked on the icons for a long time and with concentration, and when they were completely finished, he personally carried them to Bailovo. Yoto the Icon Painter was born in 1840. From a young age, he showed great talent and inclination toward drawing. In 1861, he met the famous Mirkovo painter David Georgiev, learned the secrets of this art from him, and in a few years progressed so much that he surpassed his teacher. Yoto the Icon Painter was not only very talented but also a very hardworking artist. He painted the frescoes and icons in the churches in Zhelyava, Bailovo, Sarantsi, Dolno Kamartsi, Aprilovo, the \"St. Elijah\" monastery near Belopoptsi village, Lesnovo, Grigorevo, Yana, in some Pirdop villages, in the church in Pirdop town and elsewhere. He also engaged in wood carving, carving the doors in the churches in the villages of Makotsevo, Bailovo and Osositsa. Elin Pelin, who was his relative, had wanted to study with Yoto the Icon Painter. This is what the writer remembers: \"As a child, I loved to draw with special passion. The drawings and pictures I found in various books, I drew and copied with special passion. Everyone said I would become an artist. They talked about sending me to a distant relative of mine, who at that time had gained fame as a great church icon painter. They called him Yoto the Painter. My parents wanted to leave me with him to work. But, of course, I could not become a painter...\" Yoto the Icon Painter died in Makotsevo village in 1908. The church is surrounded by a stone wall, its bell has a melodious voice and was cast on site from copper vessels, silver bracelets and other jewelry collected from the population. It houses the village's treasury, which is a painted wooden box with an inscription: \"Common treasury, in which everyone according to their dignity should give as much as they love for maintaining the expenses for the church or for the school in our village with the permission and support of Mr. Stamen Bozhichkov, and belongs to Bailovo village. 1873, January 4th day. p. Y o. N.\" The church is declared a cultural monument. Archpriest Serafim Yanev spiritually cares for the village parish, and Radostin and Tsvetanka Malamovi care for and maintain it. In the small house located in the yard lived Grandpa Dobri. With the funds donated by him, repairs were made to the church."
+    },
+    "architecture": {
+      "title": "Architecture",
+      "features": {
+        "0": "Traditional Bulgarian architecture",
+        "1": "Stone and wooden construction",
+        "2": "Revival style",
+        "3": "Authentic frescoes and icons",
+        "4": "Preserved original altar"
+      }
+    },
+    "services": {
+      "title": "Church Services",
+      "subtitle": "Schedule of church services at \"St. Cyril and Methodius\" church",
+      "sunday_liturgy": {
+        "title": "Holiday Liturgies",
+        "time": "09:00",
+        "description": "Major church holidays"
+      },
+      "holiday_services": {
+        "title": "Holiday Services",
+        "time": "09:00",
+        "description": "Major church holidays"
+      },
+      "ceremonial_rites": {
+        "title": "Ceremonial Rites",
+        "time": "By appointment",
+        "description": "Baptisms, weddings, memorial services"
+      }
+    },
+    "holidays": {
+      "title": "Church Holidays",
+      "subtitle": "Main holidays celebrated in our church",
+      "christmas": {
+        "name": "Christmas",
+        "date": "December 25",
+        "description": "Nativity of Christ - the brightest holiday"
+      },
+      "easter": {
+        "name": "Easter",
+        "date": "Variable date",
+        "description": "Resurrection of Christ - feast of feasts"
+      },
+      "epiphany": {
+        "name": "Epiphany",
+        "date": "January 6",
+        "description": "Water blessing and sanctification of waters"
+      },
+      "dormition": {
+        "name": "Dormition of the Mother of God",
+        "date": "August 15",
+        "description": "Great Feast of the Mother of God - summer holiday"
+      }
+    },
+    "contact": {
+      "title": "Contact",
+      "subtitle": "For more information or to arrange church ceremonies",
+      "church_name": "Church \"St. Dimitar\"",
+      "location": "Bailovo village, Sofia District",
+      "contact_info": "For contact, please reach out to the mayoralty or community center"
+    }
   }
 } 

@@ -1,5 +1,5 @@
 import { useLocale } from 'next-intl';
-import { Plane, MapPin, Camera, Calendar, Bed, Car, Train, Bus, Star, Info, Clock, Phone } from 'lucide-react';
+import { Plane, MapPin, Camera, Calendar, Car, Train, Bus, Star, Info, Clock, Phone, Utensils, Coffee, ShoppingCart, Store } from 'lucide-react';
 
 export default function TourismPage() {
   const locale = useLocale();
@@ -28,10 +28,10 @@ export default function TourismPage() {
         : ['Historic building', 'Library', 'Cultural events']
     },
     {
-      name: locale === 'bg' ? 'Църква "Свети Димитър"' : 'Church "St. Dimitar"',
+      name: locale === 'bg' ? 'Храм "Св. Св. Кирил и Методий"' : 'Church "St. Cyril and Methodius"',
       description: locale === 'bg' 
-        ? 'Възрожденска църква от 1836 година'
-        : 'Revival church from 1836',
+        ? 'Възрожденска църква от 1884 година'
+        : 'Revival church from 1884',
       duration: locale === 'bg' ? '30 минути' : '30 minutes',
       price: locale === 'bg' ? 'Безплатно' : 'Free',
       highlights: locale === 'bg' 
@@ -51,59 +51,23 @@ export default function TourismPage() {
     }
   ];
 
-  const accommodations = [
-    {
-      name: locale === 'bg' ? 'Семейни стаи' : 'Family Rooms',
-      type: locale === 'bg' ? 'Стаи за гости' : 'Guest rooms',
-      description: locale === 'bg' 
-        ? 'Уютни стаи в частни домове с домакински грижи'
-        : 'Cozy rooms in private homes with home care',
-      price: locale === 'bg' ? '30-50 лв./нощ' : '30-50 BGN/night',
-      amenities: locale === 'bg' 
-        ? ['Закуска', 'Паркинг', 'Градина'] 
-        : ['Breakfast', 'Parking', 'Garden']
-    },
-    {
-      name: locale === 'bg' ? 'Къща за гости "Байлово"' : 'Guest House "Bailovo"',
-      type: locale === 'bg' ? 'Къща за гости' : 'Guest house',
-      description: locale === 'bg' 
-        ? 'Напълно обзаведени апартаменти за по-дълъг престой'
-        : 'Fully furnished apartments for longer stays',
-      price: locale === 'bg' ? '80-120 лв./нощ' : '80-120 BGN/night',
-      amenities: locale === 'bg' 
-        ? ['Кухня', 'Wi-Fi', 'Барбекю'] 
-        : ['Kitchen', 'Wi-Fi', 'Barbecue']
-    },
-    {
-      name: locale === 'bg' ? 'Къмпинг "Под звездите"' : 'Camping "Under the Stars"',
-      type: locale === 'bg' ? 'Къмпинг' : 'Camping',
-      description: locale === 'bg' 
-        ? 'Места за палатки и каравани в природата'
-        : 'Tent and caravan sites in nature',
-      price: locale === 'bg' ? '15-25 лв./нощ' : '15-25 BGN/night',
-      amenities: locale === 'bg' 
-        ? ['Санитарен възел', 'Електричество', 'Огнище'] 
-        : ['Bathroom', 'Electricity', 'Fire pit']
-    }
-  ];
-
   const activities = [
     {
       icon: Camera,
       title: locale === 'bg' ? 'Фотографски тур' : 'Photography Tour',
       description: locale === 'bg' 
-        ? 'Организирани турове за заснемане на най-красивите места'
-        : 'Organized tours to capture the most beautiful places',
+        ? 'Заснемане на най-красивите места'
+        : 'Photography of the most beautiful places',
       duration: locale === 'bg' ? '3-4 часа' : '3-4 hours',
       price: locale === 'bg' ? '40 лв.' : '40 BGN'
     },
     {
       icon: Calendar,
-      title: locale === 'bg' ? 'Фестивал на Елин Пелин' : 'Elin Pelin Festival',
+      title: locale === 'bg' ? 'Фестивал на Хумора и шегата' : 'Humor and Joke Festival',
       description: locale === 'bg' 
-        ? 'Годишен литературен фестивал през август'
-        : 'Annual literary festival in August',
-      duration: locale === 'bg' ? '2 дни' : '2 days',
+        ? 'Годишен хумористичен фестивал през април'
+        : 'Annual humor and joke festival in April',
+      duration: locale === 'bg' ? '1 ден' : '1 day',
       price: locale === 'bg' ? 'Безплатно' : 'Free'
     },
     {
@@ -122,8 +86,8 @@ export default function TourismPage() {
       icon: Car,
       title: locale === 'bg' ? 'Със собствен автомобил' : 'By Car',
       description: locale === 'bg' 
-        ? 'От София - 43 км на изток по пътя за Етрополе'
-        : 'From Sofia - 43 km east on the road to Etropole',
+        ? 'От София - 43 км на изток по подбалканския път'
+        : 'From Sofia - 43 km east on the Balkan road',
       duration: locale === 'bg' ? '45 минути' : '45 minutes'
     },
     {
@@ -149,8 +113,8 @@ export default function TourismPage() {
       icon: Info,
       title: locale === 'bg' ? 'Туристическа информация' : 'Tourist Information',
       items: [
-        locale === 'bg' ? 'Кметство Байлово: 0887 XXX XXX' : 'Bailovo Mayoralty: 0887 XXX XXX',
-        locale === 'bg' ? 'НЧ "Елин Пелин": 0888 XXX XXX' : 'Community Center "Elin Pelin": 0888 XXX XXX',
+        locale === 'bg' ? 'Кметство Байлово: +359 882 445 409' : 'Bailovo Mayoralty: +359 876 734 728',
+        locale === 'bg' ? 'НЧ "Елин Пелин": +359 876 734 728' : 'Community Center "Elin Pelin": +359 876 734 728',
         locale === 'bg' ? 'Email: info@bailovo.bg' : 'Email: info@bailovo.bg'
       ]
     },
@@ -158,8 +122,8 @@ export default function TourismPage() {
       icon: Clock,
       title: locale === 'bg' ? 'Работно време' : 'Working Hours',
       items: [
-        locale === 'bg' ? 'Музей: Вт-Нед 9:00-17:00' : 'Museum: Tue-Sun 9:00-17:00',
-        locale === 'bg' ? 'Читалище: Пон-Пет 14:00-18:00' : 'Community Center: Mon-Fri 14:00-18:00',
+        locale === 'bg' ? 'Музей: Вт-Нед 08:30-12:30, 14:00-18:00' : 'Museum: Tue-Sun 08:30-12:30, 14:00-18:00',
+        locale === 'bg' ? 'Читалище: Пон-Пет  08:30-12:30, 14:00-18:00' : 'Community Center: Mon-Fri  08:30-12:30, 14:00-18:00',
         locale === 'bg' ? 'Църква: Отворена през деня' : 'Church: Open during the day'
       ]
     },
@@ -315,7 +279,7 @@ export default function TourismPage() {
       </div>
 
       {/* Accommodations */}
-      <div className="py-16 bg-white">
+      {/* <div className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
@@ -363,7 +327,7 @@ export default function TourismPage() {
             ))}
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Activities */}
       <div className="py-16 bg-gray-50">
@@ -395,10 +359,347 @@ export default function TourismPage() {
                     <Clock className="w-4 h-4 text-gray-500" />
                     <span className="text-sm text-gray-600">{activity.duration}</span>
                   </div>
-                  <div className="text-lg font-semibold text-indigo-600">{activity.price}</div>
+                  {/* <div className="text-lg font-semibold text-indigo-600">{activity.price}</div> */}
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Local Establishments */}
+      <div className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              {locale === 'bg' ? 'Местни заведения' : 'Local Establishments'}
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              {locale === 'bg' 
+                ? 'Ресторанти, кафенета, магазини и услуги за туристи'
+                : 'Restaurants, cafes, shops and services for tourists'}
+            </p>
+          </div>
+          
+          {/* Restaurants */}
+          <div className="mb-16">
+            <div className="text-center mb-8">
+              <div className="flex justify-center mb-4">
+                <div className="p-4 rounded-full bg-gradient-to-r from-orange-500 to-red-500">
+                  <Utensils className="w-8 h-8 text-white" />
+                </div>
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900">
+                {locale === 'bg' ? 'Ресторанти' : 'Restaurants'}
+              </h3>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100">
+                <div className="flex items-start justify-between mb-4">
+                  <h4 className="text-xl font-bold text-gray-900">
+                    {locale === 'bg' ? 'Ресторант "No Names"' : 'Restaurant "No Names"'}
+                  </h4>
+                  {/* <div className="flex items-center space-x-1">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
+                    ))}
+                  </div> */}
+                </div>
+                <p className="text-gray-600 mb-6">
+                  {locale === 'bg' 
+                    ? 'Вкусна кухня и уютна обстановка'
+                    : 'Tasty food and cozy atmosphere'}
+                </p>
+                <div className="space-y-3 mb-6">
+                  <div className="flex items-center space-x-3">
+                    <MapPin className="w-5 h-5 text-gray-500" />
+                    <span className="text-gray-700">
+                      {locale === 'bg' ? 'Център на селото' : 'Village center'}
+                    </span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <Clock className="w-5 h-5 text-gray-500" />
+                    <span className="text-gray-700">
+                      {locale === 'bg' ? 'Всеки ден 12:00-22:00' : 'Daily 12:00-22:00'}
+                    </span>
+                  </div>
+                </div>
+                <div>
+                  <h5 className="text-lg font-semibold text-gray-900 mb-3">
+                    {locale === 'bg' ? 'Специалности:' : 'Specialties:'}
+                  </h5>
+                  <div className="flex flex-wrap gap-2">
+                    {(locale === 'bg' 
+                      ? ['Приема резервации', 'Места отвън', 'Гурме специалитети'] 
+                      : ['Accepts reservations', 'Outdoor seating', 'Gourmet specialties']
+                    ).map((specialty, index) => (
+                      <span key={index} className="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-sm">
+                        {specialty}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100">
+                <div className="flex items-start justify-between mb-4">
+                  <h4 className="text-xl font-bold text-gray-900">
+                    {locale === 'bg' ? 'Семейна къща "Байлово"' : 'Family House "Bailovo"'}
+                  </h4>
+                  <div className="flex items-center space-x-1">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
+                    ))}
+                  </div>
+                </div>
+                <p className="text-gray-600 mb-6">
+                  {locale === 'bg' 
+                    ? 'Уютна семейна къща за хранене с градина'
+                    : 'Cozy family dining house with garden'}
+                </p>
+                <div className="space-y-3 mb-6">
+                  <div className="flex items-center space-x-3">
+                    <MapPin className="w-5 h-5 text-gray-500" />
+                    <span className="text-gray-700">
+                      {locale === 'bg' ? 'Ул. Главна 15' : '15 Main Street'}
+                    </span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <Clock className="w-5 h-5 text-gray-500" />
+                    <span className="text-gray-700">
+                      {locale === 'bg' ? 'Пет-Нед 11:00-21:00' : 'Fri-Sun 11:00-21:00'}
+                    </span>
+                  </div>
+                </div>
+                <div>
+                  <h5 className="text-lg font-semibold text-gray-900 mb-3">
+                    {locale === 'bg' ? 'Специалности:' : 'Specialties:'}
+                  </h5>
+                  <div className="flex flex-wrap gap-2">
+                    {(locale === 'bg' 
+                      ? ['Домашни супи', 'Пресни салати', 'Кафе и сладкиши'] 
+                      : ['Homemade soups', 'Fresh salads', 'Coffee and desserts']
+                    ).map((specialty, index) => (
+                      <span key={index} className="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-sm">
+                        {specialty}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div> */}
+            </div>
+          </div>
+
+          {/* Cafes */}
+          {/* <div className="mb-16">
+            <div className="text-center mb-8">
+              <div className="flex justify-center mb-4">
+                <div className="p-4 rounded-full bg-gradient-to-r from-brown-500 to-amber-600">
+                  <Coffee className="w-8 h-8 text-white" />
+                </div>
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900">
+                {locale === 'bg' ? 'Кафенета' : 'Cafes'}
+              </h3>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100">
+                <h4 className="text-xl font-bold text-gray-900 mb-4">
+                  {locale === 'bg' ? 'Кафе "Централ"' : 'Cafe "Central"'}
+                </h4>
+                <p className="text-gray-600 mb-6">
+                  {locale === 'bg' 
+                    ? 'Централно кафене с терасата и приятна атмосфера'
+                    : 'Central cafe with terrace and pleasant atmosphere'}
+                </p>
+                <div className="space-y-3 mb-6">
+                  <div className="flex items-center space-x-3">
+                    <MapPin className="w-5 h-5 text-gray-500" />
+                    <span className="text-gray-700">
+                      {locale === 'bg' ? 'Центъра на селото' : 'Village center'}
+                    </span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <Clock className="w-5 h-5 text-gray-500" />
+                    <span className="text-gray-700">
+                      {locale === 'bg' ? 'Всеки ден 7:00-22:00' : 'Daily 7:00-22:00'}
+                    </span>
+                  </div>
+                </div>
+                <div>
+                  <h5 className="text-lg font-semibold text-gray-900 mb-3">
+                    {locale === 'bg' ? 'Специалности:' : 'Specialties:'}
+                  </h5>
+                  <div className="flex flex-wrap gap-2">
+                    {(locale === 'bg' 
+                      ? ['Кафе', 'Свежи напитки', 'Закуски'] 
+                      : ['Coffee', 'Fresh beverages', 'Snacks']
+                    ).map((specialty, index) => (
+                      <span key={index} className="px-3 py-1 bg-amber-100 text-amber-700 rounded-full text-sm">
+                        {specialty}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100">
+                <h4 className="text-xl font-bold text-gray-900 mb-4">
+                  {locale === 'bg' ? 'Бистро "Под липите"' : 'Bistro "Under the Lindens"'}
+                </h4>
+                <p className="text-gray-600 mb-6">
+                  {locale === 'bg' 
+                    ? 'Тихо място за кафе сред природата'
+                    : 'Quiet place for coffee surrounded by nature'}
+                </p>
+                <div className="space-y-3 mb-6">
+                  <div className="flex items-center space-x-3">
+                    <MapPin className="w-5 h-5 text-gray-500" />
+                    <span className="text-gray-700">
+                      {locale === 'bg' ? 'Близо до парка' : 'Near the park'}
+                    </span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <Clock className="w-5 h-5 text-gray-500" />
+                    <span className="text-gray-700">
+                      {locale === 'bg' ? 'Всеки ден 8:00-20:00' : 'Daily 8:00-20:00'}
+                    </span>
+                  </div>
+                </div>
+                <div>
+                  <h5 className="text-lg font-semibold text-gray-900 mb-3">
+                    {locale === 'bg' ? 'Специалности:' : 'Specialties:'}
+                  </h5>
+                  <div className="flex flex-wrap gap-2">
+                    {(locale === 'bg' 
+                      ? ['Експресо кафе', 'Домашни торти', 'Фреш сокове'] 
+                      : ['Espresso coffee', 'Homemade cakes', 'Fresh juices']
+                    ).map((specialty, index) => (
+                      <span key={index} className="px-3 py-1 bg-amber-100 text-amber-700 rounded-full text-sm">
+                        {specialty}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> */}
+
+          {/* Shops & Services */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            {/* Shops */}
+            <div>
+              <div className="text-center mb-8">
+                <div className="flex justify-center mb-4">
+                  <div className="p-4 rounded-full bg-gradient-to-r from-green-500 to-blue-500">
+                    <ShoppingCart className="w-8 h-8 text-white" />
+                  </div>
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900">
+                  {locale === 'bg' ? 'Магазини' : 'Shops'}
+                </h3>
+              </div>
+              <div className="space-y-6">
+                <div className="bg-gradient-to-br from-green-50 to-blue-50 rounded-2xl p-6 border border-gray-100">
+                  <h4 className="text-lg font-bold text-gray-900 mb-3">
+                    {locale === 'bg' ? 'Бакалия "Байлово"' : 'Store "Bailovo"'}
+                  </h4>
+                  <p className="text-gray-600 mb-4">
+                    {locale === 'bg' 
+                      ? 'Основни хранителни стоки и битови потреби'
+                      : 'Basic groceries and household necessities'}
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {(locale === 'bg' 
+                      ? ['Хранителни стоки', 'Битова химия', 'Местни продукти'] 
+                      : ['Groceries', 'Household items', 'Local products']
+                    ).map((item, index) => (
+                      <span key={index} className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm">
+                        {item}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="bg-gradient-to-br from-green-50 to-blue-50 rounded-2xl p-6 border border-gray-100">
+                  <h4 className="text-lg font-bold text-gray-900 mb-3">
+                    {locale === 'bg' ? 'Смесен магазин' : 'Mixed store'}
+                  </h4>
+                  <p className="text-gray-600 mb-4">
+                    {locale === 'bg' 
+                      ? 'Основни хранителни стоки, битови потреби и строителни материали'
+                      : 'Basic groceries, household items and construction materials'}
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {(locale === 'bg' 
+                      ? ['Основни хранителни стоки', 'Битови потреби', 'Строителни материали'] 
+                      : ['Basic groceries', 'Household items', 'Construction materials']
+                    ).map((item, index) => (
+                      <span key={index} className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm">
+                        {item}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Services */}
+            <div>
+              <div className="text-center mb-8">
+                <div className="flex justify-center mb-4">
+                  <div className="p-4 rounded-full bg-gradient-to-r from-purple-500 to-pink-500">
+                    <Store className="w-8 h-8 text-white" />
+                  </div>
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900">
+                  {locale === 'bg' ? 'Услуги' : 'Services'}
+                </h3>
+              </div>
+              <div className="space-y-6">
+                <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-6 border border-gray-100">
+                  <h4 className="text-lg font-bold text-gray-900 mb-3">
+                    {locale === 'bg' ? 'Пощенски пункт' : 'Post Office'}
+                  </h4>
+                  <p className="text-gray-600 mb-4">
+                    {locale === 'bg' 
+                      ? 'Пощенски услуги и доставки'
+                      : 'Postal services and deliveries'}
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {(locale === 'bg' 
+                      ? ['Пощенски услуги', 'Превод на пари', 'Доставки'] 
+                      : ['Mail services', 'Money transfers', 'Deliveries']
+                    ).map((item, index) => (
+                      <span key={index} className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">
+                        {item}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-6 border border-gray-100">
+                  <h4 className="text-lg font-bold text-gray-900 mb-3">
+                    {locale === 'bg' ? 'Аптека "Здраве"' : 'Pharmacy "Health"'}
+                  </h4>
+                  <p className="text-gray-600 mb-4">
+                    {locale === 'bg' 
+                      ? 'Лекарства и медицински консултации'
+                      : 'Medicines and medical consultations'}
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {(locale === 'bg' 
+                      ? ['Рецептурни лекарства', 'Хранителни добавки', 'Първа помощ'] 
+                      : ['Prescription medicines', 'Supplements', 'First aid']
+                    ).map((item, index) => (
+                      <span key={index} className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">
+                        {item}
+                      </span>
+                    ))}
+                  </div>
+                </div> */}
+              </div>
+            </div>
           </div>
         </div>
       </div>

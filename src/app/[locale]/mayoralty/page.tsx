@@ -25,10 +25,10 @@ export default function MayoraltyPage() {
         ? 'Разрешителни за строеж и планиране' 
         : 'Building permits and urban planning',
       items: [
-        locale === 'bg' ? 'Разрешителни за строеж' : 'Building permits',
-        locale === 'bg' ? 'Виза за проектиране' : 'Design permits',
-        locale === 'bg' ? 'Разрешения за ползване' : 'Occupancy permits',
-        locale === 'bg' ? 'Устройствени планове' : 'Development plans'
+        locale === 'bg' ? 'Разрешителни за изхвърляне на пръст' : 'Permits for disposal of soil',
+        // locale === 'bg' ? 'Виза за проектиране' : 'Design permits',
+        // locale === 'bg' ? 'Разрешения за ползване' : 'Occupancy permits',
+        // locale === 'bg' ? 'Устройствени планове' : 'Development plans'
       ]
     },
     {
@@ -67,13 +67,13 @@ export default function MayoraltyPage() {
     },
     {
       icon: Phone,
-      title: locale === 'bg' ? 'Телефон' : 'Phone',
-      info: '0887 XXX XXX'
+      title: locale === 'bg' ? 'Телефони' : 'Phones',
+      info: 'multiple_phones'
     },
     {
       icon: Mail,
       title: locale === 'bg' ? 'Email' : 'Email',
-      info: 'bailovo@gornamalina.bg'
+      info: 'baylovo@gornamalina.bg'
     },
     {
       icon: Clock,
@@ -210,7 +210,35 @@ export default function MayoraltyPage() {
                   </div>
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">{contact.title}</h3>
-                <p className="text-gray-600">{contact.info}</p>
+                {contact.info === 'multiple_phones' ? (
+                  <div className="text-gray-600 space-y-1">
+                    <div>
+                      <a 
+                        href="tel:+359882445409" 
+                        className="text-primary-600 hover:text-primary-800 transition-colors duration-200"
+                      >
+                        +359 882 445 409
+                      </a>
+                    </div>
+                    <div>
+                      <a 
+                        href="tel:+359889703060" 
+                        className="text-primary-600 hover:text-primary-800 transition-colors duration-200"
+                      >
+                        +359 889 703 060
+                      </a>
+                    </div>
+                  </div>
+                ) : contact.info === 'baylovo@gornamalina.bg' ? (
+                  <a 
+                    href="mailto:baylovo@gornamalina.bg" 
+                    className="text-primary-600 hover:text-primary-800 transition-colors duration-200"
+                  >
+                    {contact.info}
+                  </a>
+                ) : (
+                  <p className="text-gray-600">{contact.info}</p>
+                )}
               </div>
             ))}
           </div>

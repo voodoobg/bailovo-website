@@ -42,7 +42,7 @@ export default function Navigation() {
         { name: t('news'), href: `/${locale}/news` },
         { name: t('events'), href: `/${locale}/events` },
         { name: t('mayoralty'), href: `/${locale}/mayoralty` },
-        { name: t('establishments'), href: `/${locale}/establishments` },
+        // { name: t('establishments'), href: `/${locale}/establishments` },
       ]
     },
     { name: t('gallery'), href: `/${locale}/gallery` },

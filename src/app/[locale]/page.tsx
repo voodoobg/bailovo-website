@@ -26,8 +26,11 @@ export default function HomePage() {
               {t('about.description')}
               <br />
               <br />
-              <div className="bg-secondary-100 rounded-lg p-8">
+              <div className="italic bg-secondary-100 rounded-lg p-8">
                 {t('about.description2')}
+              </div>
+              <div className="italic text-right bg-secondary-100 rounded-lg p-8">
+                {t('about.description3')}
               </div>
             </span>
           </div>

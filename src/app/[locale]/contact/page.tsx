@@ -68,7 +68,8 @@ export default function ContactPage() {
                   <Phone className="w-6 h-6 text-secondary-500 mt-1 flex-shrink-0" />
                   <div>
                     <h3 className="font-semibold text-primary-600 mb-1">{t('phone')}</h3>
-                    <p className="text-gray-600">+359 888 888 888</p>
+                    <p className="text-gray-600">Читалище: <a href="tel:+359876734728">+359 876 734 728</a></p>
+                    <p className="text-gray-600">Кметство: <a href="tel:+359882445409">+359 882 445 409</a></p>
                   </div>
                 </div>
 
@@ -76,11 +77,12 @@ export default function ContactPage() {
                   <Mail className="w-6 h-6 text-secondary-500 mt-1 flex-shrink-0" />
                   <div>
                     <h3 className="font-semibold text-primary-600 mb-1">{t('email')}</h3>
-                    <p className="text-gray-600">info@bailovo.eu</p>
+                    <p className="text-gray-600">Читалище: <a href="mailto:info@bailovo.bg">info@bailovo.bg</a></p>
+                    <p className="text-gray-600">Кметство: <a href="mailto:baylovo@gornamalina.bg">baylovo@gornamalina.bg</a></p>
                   </div>
                 </div>
 
-                <div className="flex items-start space-x-4">
+                {/* <div className="flex items-start space-x-4">
                   <Clock className="w-6 h-6 text-secondary-500 mt-1 flex-shrink-0" />
                   <div>
                     <h3 className="font-semibold text-primary-600 mb-1">{t('open_times')}</h3>
@@ -89,7 +91,7 @@ export default function ContactPage() {
                       <p>{t('saturday')}: 10:00 - 16:00</p>
                     </div>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
 
@@ -98,21 +100,11 @@ export default function ContactPage() {
               <h2 className="text-2xl font-bold text-primary-600 mb-6">{t('useful_links')}</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <h3 className="font-semibold text-primary-600 mb-2">{t('museum')}</h3>
-                                     <p className="text-gray-600 text-sm">museum@bailovo.eu</p>
+                  <h3 className="text-2xl font-semibold text-primary-600 mb-2"><a href="https://tourism.gornamalina.bg">Туристически портал община Горна Малина</a></h3>
                   </div>
                   <div>
-                   <h3 className="font-semibold text-primary-600 mb-2">{t('culture')}</h3>
-                   <p className="text-gray-600 text-sm">culture@bailovo.eu</p>
+                   <h3 className="font-semibold text-primary-600 mb-2"><a href="https://www.nlmuseum.bg">Национален литературен музей</a></h3>
                   </div>
-                  <div>
-                   <h3 className="font-semibold text-primary-600 mb-2">{t('mayor')}</h3>
-                   <p className="text-gray-600 text-sm">mayor@bailovo.eu</p>
-                  </div>
-                  <div>
-                   <h3 className="font-semibold text-primary-600 mb-2">{t('tourism')}</h3>
-                   <p className="text-gray-600 text-sm">tourism@bailovo.eu</p>
-                </div>
               </div>
             </div>
           </div>

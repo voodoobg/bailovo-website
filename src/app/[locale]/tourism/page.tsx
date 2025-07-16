@@ -861,7 +861,7 @@ export default function TourismPage() {
                 <div className="flex items-center space-x-3">
                   <Clock className="w-5 h-5 text-gray-500" />
                   <span className="text-gray-700">
-                    {locale === 'bg' ? 'Вторник и Неделя 18:30-20:00' : 'Tuesday and Sunday 18:30-20:00'}
+                    {locale === 'bg' ? 'Вторник 19:00-20:30, Неделя 16:30-18:00' : 'Tuesday 19:00-20:30, Sunday 16:30-18:00'}
                   </span>
                 </div>
                 <div className="flex items-center space-x-3">
@@ -870,6 +870,9 @@ export default function TourismPage() {
                     {locale === 'bg' ? 'За информация: ' : 'For information: '}
                     <a href="tel:0888955322" className="text-blue-600 hover:text-blue-800 hover:underline">
                       {locale === 'bg' ? '0888 955 322' : '0888 955 322'}
+                    </a>
+                    <a href="tel:0889122024" className="text-blue-600 hover:text-blue-800 hover:underline">
+                      {locale === 'bg' ? ',  0889 122 024' : ',  0889 122 024'}
                     </a>
                   </span>
                 </div>

@@ -80,9 +80,6 @@ export default function ChurchPage() {
               <p className="text-lg text-gray-600 mb-6">
                 {t('about.description1')}
               </p>
-              <p className="text-lg text-gray-600 mb-6">
-                {t('about.description2')}
-              </p>
             </div>
             <div className="bg-gradient-to-br from-blue-50 to-purple-50 p-8 rounded-2xl">
               <h3 className="text-2xl font-bold text-gray-900 mb-4">

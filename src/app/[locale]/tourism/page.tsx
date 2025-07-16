@@ -880,8 +880,8 @@ export default function TourismPage() {
                 </h5>
                 <div className="flex flex-wrap gap-2">
                   {(locale === 'bg' 
-                    ? ['Хата йога', 'Виняса йога', 'Медитация', 'Дишащи техники'] 
-                    : ['Hatha yoga', 'Vinyasa yoga', 'Meditation', 'Breathing techniques']
+                    ? ['Хата йога', 'Медитация', 'Дихателни техники', 'Йога за деца'] 
+                    : ['Hatha yoga', 'Meditation', 'Breathing techniques', 'Yoga for children']
                   ).map((specialty, index) => (
                     <span key={index} className="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-sm">
                       {specialty}

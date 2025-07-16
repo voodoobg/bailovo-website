@@ -848,7 +848,7 @@ export default function TourismPage() {
                 </p>
               <p className="text-gray-600 mb-6">
                 {locale === 'bg' 
-                  ? 'Професионални йога занимания в спокойна обстановка, съчетаващи древни техники с модерни подходи за хармония на тялото и духа'
+                  ? 'Професионални йога занимания в спокойна обстановка, съчетаващи древни техники с модерни подходи за хармония на тялото и духа. Екатерина Йончева е йога инструктор, сертифициран от Национална спортна академия "Васил Левски" и Българската федерация по йога.'
                   : 'Professional yoga classes in a peaceful environment, combining ancient techniques with modern approaches for harmony of body and spirit'}
               </p>
               <div className="space-y-3 mb-6">

@@ -76,7 +76,7 @@ export default function Navigation() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-12">
+          <div className="hidden lg:flex items-center space-x-6">
             {navigation.map((item) => {
               const isActive = isDropdownItemActive(item);
               

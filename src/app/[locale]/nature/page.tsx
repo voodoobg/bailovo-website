@@ -151,27 +151,27 @@ export default function NaturePage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50">
       {/* Hero Section */}
-      <div className="bg-gradient-to-r from-green-600 to-emerald-600 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative pt-32 pb-16 px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
           <div className="text-center">
             <div className="flex justify-center mb-6">
-              <div className="p-4 bg-white/20 rounded-full">
+              <div className="bg-gradient-to-r from-blue-600 to-green-600 p-4 rounded-full shadow-xl">
                 <TreePine className="w-12 h-12 text-white" />
               </div>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
+            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
               {locale === 'bg' ? 'Природа в Байлово' : 'Nature in Bailovo'}
             </h1>
-            <p className="text-xl text-white/90 max-w-3xl mx-auto">
+            <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               {locale === 'bg' 
                 ? 'Изживейте красотата на природата в Ихтиманска Средна гора'
                 : 'Experience the beauty of nature in Ihtiman Sredna Gora'}
             </p>
           </div>
         </div>
-      </div>
+      </section>
 
       {/* Introduction */}
       <div className="py-16 bg-white">

@@ -1,5 +1,5 @@
 import { useLocale } from 'next-intl';
-import { Plane, MapPin, Camera, Calendar, Car, Train, Bus, Star, Info, Clock, Phone, Utensils, Coffee, ShoppingCart, Store } from 'lucide-react';
+import { Plane, MapPin, Bed, Camera, Calendar, Car, Train, Bus, Star, Info, Clock, Phone, Utensils, ShoppingCart, Store, Activity } from 'lucide-react';
 
 export default function TourismPage() {
   const locale = useLocale();
@@ -49,6 +49,42 @@ export default function TourismPage() {
         ? ['Панорамни гледки', 'Чист въздух', 'Дива природа'] 
         : ['Panoramic views', 'Fresh air', 'Wild nature']
     }
+  ];
+
+  const accommodations = [
+    // {
+    //   name: locale === 'bg' ? 'Семейни стаи' : 'Family Rooms',
+    //   type: locale === 'bg' ? 'Стаи за гости' : 'Guest rooms',
+    //   description: locale === 'bg' 
+    //     ? 'Уютни стаи в частни домове с домакински грижи'
+    //     : 'Cozy rooms in private homes with home care',
+    //   price: locale === 'bg' ? '30-50 лв./нощ' : '30-50 BGN/night',
+    //   amenities: locale === 'bg' 
+    //     ? ['Закуска', 'Паркинг', 'Градина'] 
+    //     : ['Breakfast', 'Parking', 'Garden']
+    // },
+    {
+      name: locale === 'bg' ? 'Къща Герак Мито' : 'House Gerak Mito',
+      type: locale === 'bg' ? 'Къща за гости' : 'Guest house',
+      description: locale === 'bg' 
+        ? 'Къща Герак Мито се намира в Герашката махала на селото, на улица Герашка N1, в един от  дворовете на рода Гераците, за който Елин Пелин пише, но ползва само имената от този род, а всъщност пише за живота на семейство от съседно село. На разположение на гостите са безплатни шезлонги и чадъри за лежерни разговори. В двора има възможност за ролеви игри, лятно кино, приготвяне на барбекю, място за хранене.'
+        : 'The Gerak Mito house is located in the Gerashka neighborhood of the village, on Gerashka Street N1, in one of the yards of the Gerakite family, for which E. Pelin writes, but uses only the names of this family, actually writing about the life of a family from a neighboring village.',
+      price: locale === 'bg' ? '' : '',
+      amenities: locale === 'bg' 
+        ? ['Кухня', 'Wi-Fi', 'Барбекю', 'Паркинг', 'Градина'] 
+        : ['Kitchen', 'Wi-Fi', 'Barbecue', 'Parking', 'Garden']
+    },
+    // {
+    //   name: locale === 'bg' ? 'Къмпинг "Под звездите"' : 'Camping "Under the Stars"',
+    //   type: locale === 'bg' ? 'Къмпинг' : 'Camping',
+    //   description: locale === 'bg' 
+    //     ? 'Места за палатки и каравани в природата'
+    //     : 'Tent and caravan sites in nature',
+    //   price: locale === 'bg' ? '15-25 лв./нощ' : '15-25 BGN/night',
+    //   amenities: locale === 'bg' 
+    //     ? ['Санитарен възел', 'Електричество', 'Огнище'] 
+    //     : ['Bathroom', 'Electricity', 'Fire pit']
+    // }
   ];
 
   const activities = [
@@ -139,27 +175,27 @@ export default function TourismPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50">
       {/* Hero Section */}
-      <div className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative pt-32 pb-16 px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
           <div className="text-center">
             <div className="flex justify-center mb-6">
-              <div className="p-4 bg-white/20 rounded-full">
+              <div className="bg-gradient-to-r from-blue-600 to-green-600 p-4 rounded-full shadow-xl">
                 <Plane className="w-12 h-12 text-white" />
               </div>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
+            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
               {locale === 'bg' ? 'Туризъм в Байлово' : 'Tourism in Bailovo'}
             </h1>
-            <p className="text-xl text-white/90 max-w-3xl mx-auto">
+            <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               {locale === 'bg' 
                 ? 'Открийте родното място на Елин Пелин и красотата на българската природа'
                 : 'Discover the birthplace of Elin Pelin and the beauty of Bulgarian nature'}
             </p>
           </div>
         </div>
-      </div>
+      </section>
 
       {/* Why Visit Bailovo */}
       <div className="py-16 bg-white">
@@ -279,7 +315,7 @@ export default function TourismPage() {
       </div>
 
       {/* Accommodations */}
-      {/* <div className="py-16 bg-white">
+      <div className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
@@ -294,9 +330,11 @@ export default function TourismPage() {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {accommodations.map((accommodation, index) => (
-              <div key={index} className="bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-2xl">
+              <div key={index} className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
                 <div className="flex items-center space-x-3 mb-4">
-                  <Bed className="w-8 h-8 text-blue-600" />
+                  <div className="p-3 bg-blue-100 rounded-full">
+                    <Bed className="w-6 h-6 text-blue-600" />
+                  </div>
                   <h3 className="text-xl font-bold text-gray-900">{accommodation.name}</h3>
                 </div>
                 
@@ -308,7 +346,9 @@ export default function TourismPage() {
                 
                 <p className="text-gray-600 mb-4">{accommodation.description}</p>
                 
-                <div className="text-xl font-bold text-blue-600 mb-4">{accommodation.price}</div>
+                {accommodation.price && (
+                  <div className="text-lg font-semibold text-blue-600 mb-4">{accommodation.price}</div>
+                )}
                 
                 <div>
                   <h4 className="font-semibold text-gray-900 mb-2">
@@ -327,7 +367,7 @@ export default function TourismPage() {
             ))}
           </div>
         </div>
-      </div> */}
+      </div>
 
       {/* Activities */}
       <div className="py-16 bg-gray-50">
@@ -600,45 +640,95 @@ export default function TourismPage() {
                 </h3>
               </div>
               <div className="space-y-6">
-                <div className="bg-gradient-to-br from-green-50 to-blue-50 rounded-2xl p-6 border border-gray-100">
-                  <h4 className="text-lg font-bold text-gray-900 mb-3">
+                <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100">
+                  <h4 className="text-xl font-bold text-gray-900 mb-4">
                     {locale === 'bg' ? 'Бакалия "Байлово"' : 'Store "Bailovo"'}
                   </h4>
-                  <p className="text-gray-600 mb-4">
+                  <p className="text-gray-600 mb-6">
                     {locale === 'bg' 
                       ? 'Основни хранителни стоки и битови потреби'
                       : 'Basic groceries and household necessities'}
                   </p>
-                  <div className="flex flex-wrap gap-2">
-                    {(locale === 'bg' 
-                      ? ['Хранителни стоки', 'Битова химия', 'Местни продукти'] 
-                      : ['Groceries', 'Household items', 'Local products']
-                    ).map((item, index) => (
-                      <span key={index} className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm">
-                        {item}
+                  <div className="space-y-3 mb-6">
+                    <div className="flex items-center space-x-3">
+                      <MapPin className="w-5 h-5 text-gray-500" />
+                      <span className="text-gray-700">
+                        {locale === 'bg' ? 'Център на селото' : 'Village center'}
                       </span>
-                    ))}
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <Phone className="w-5 h-5 text-gray-500" />
+                      <a href="tel:071504444" className="text-blue-600 hover:text-blue-800 hover:underline">
+                        07/1504444
+                      </a>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <Clock className="w-5 h-5 text-gray-500" />
+                      <span className="text-gray-700">
+                        {locale === 'bg' ? 'Всеки ден 7:00-20:00' : 'Daily 7:00-20:00'}
+                      </span>
+                    </div>
+                  </div>
+                  <div>
+                    <h5 className="text-lg font-semibold text-gray-900 mb-3">
+                      {locale === 'bg' ? 'Продукти:' : 'Products:'}
+                    </h5>
+                    <div className="flex flex-wrap gap-2">
+                      {(locale === 'bg' 
+                        ? ['Хранителни стоки', 'Битова химия', 'Местни продукти'] 
+                        : ['Groceries', 'Household items', 'Local products']
+                      ).map((item, index) => (
+                        <span key={index} className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm">
+                          {item}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </div>
 
-                <div className="bg-gradient-to-br from-green-50 to-blue-50 rounded-2xl p-6 border border-gray-100">
-                  <h4 className="text-lg font-bold text-gray-900 mb-3">
+                <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100">
+                  <h4 className="text-xl font-bold text-gray-900 mb-4">
                     {locale === 'bg' ? 'Смесен магазин' : 'Mixed store'}
                   </h4>
-                  <p className="text-gray-600 mb-4">
+                  <p className="text-gray-600 mb-6">
                     {locale === 'bg' 
                       ? 'Основни хранителни стоки, битови потреби и строителни материали'
                       : 'Basic groceries, household items and construction materials'}
                   </p>
-                  <div className="flex flex-wrap gap-2">
-                    {(locale === 'bg' 
-                      ? ['Основни хранителни стоки', 'Битови потреби', 'Строителни материали'] 
-                      : ['Basic groceries', 'Household items', 'Construction materials']
-                    ).map((item, index) => (
-                      <span key={index} className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm">
-                        {item}
+                  <div className="space-y-3 mb-6">
+                    <div className="flex items-center space-x-3">
+                      <MapPin className="w-5 h-5 text-gray-500" />
+                      <span className="text-gray-700">
+                        {locale === 'bg' ? 'Главна улица' : 'Main street'}
                       </span>
-                    ))}
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <Phone className="w-5 h-5 text-gray-500" />
+                      <a href="tel:+359898361531" className="text-blue-600 hover:text-blue-800 hover:underline">
+                        +359 898 361 531
+                      </a>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <Clock className="w-5 h-5 text-gray-500" />
+                      <span className="text-gray-700">
+                        {locale === 'bg' ? 'Пон-Сб 8:00-19:00' : 'Mon-Sat 8:00-19:00'}
+                      </span>
+                    </div>
+                  </div>
+                  <div>
+                    <h5 className="text-lg font-semibold text-gray-900 mb-3">
+                      {locale === 'bg' ? 'Асортимент:' : 'Assortment:'}
+                    </h5>
+                    <div className="flex flex-wrap gap-2">
+                      {(locale === 'bg' 
+                        ? ['Основни хранителни стоки', 'Битови потреби', 'Строителни материали'] 
+                        : ['Basic groceries', 'Household items', 'Construction materials']
+                      ).map((item, index) => (
+                        <span key={index} className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm">
+                          {item}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -657,24 +747,49 @@ export default function TourismPage() {
                 </h3>
               </div>
               <div className="space-y-6">
-                <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-6 border border-gray-100">
-                  <h4 className="text-lg font-bold text-gray-900 mb-3">
+                <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100">
+                  <h4 className="text-xl font-bold text-gray-900 mb-4">
                     {locale === 'bg' ? 'Пощенски пункт' : 'Post Office'}
                   </h4>
-                  <p className="text-gray-600 mb-4">
+                  <p className="text-gray-600 mb-6">
                     {locale === 'bg' 
                       ? 'Пощенски услуги и доставки'
                       : 'Postal services and deliveries'}
                   </p>
-                  <div className="flex flex-wrap gap-2">
-                    {(locale === 'bg' 
-                      ? ['Пощенски услуги', 'Превод на пари', 'Доставки'] 
-                      : ['Mail services', 'Money transfers', 'Deliveries']
-                    ).map((item, index) => (
-                      <span key={index} className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">
-                        {item}
+                  <div className="space-y-3 mb-6">
+                    <div className="flex items-center space-x-3">
+                      <MapPin className="w-5 h-5 text-gray-500" />
+                      <span className="text-gray-700">
+                        {locale === 'bg' ? 'Централен площад' : 'Central square'}
                       </span>
-                    ))}
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <Phone className="w-5 h-5 text-gray-500" />
+                      <a href="tel:071504220" className="text-blue-600 hover:text-blue-800 hover:underline">
+                        07150/4220
+                      </a>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <Clock className="w-5 h-5 text-gray-500" />
+                      <span className="text-gray-700">
+                        {locale === 'bg' ? 'Пон-Пет 8:00-17:00' : 'Mon-Fri 8:00-17:00'}
+                      </span>
+                    </div>
+                  </div>
+                  <div>
+                    <h5 className="text-lg font-semibold text-gray-900 mb-3">
+                      {locale === 'bg' ? 'Услуги:' : 'Services:'}
+                    </h5>
+                    <div className="flex flex-wrap gap-2">
+                      {(locale === 'bg' 
+                        ? ['Пощенски услуги', 'Превод на пари', 'Доставки'] 
+                        : ['Mail services', 'Money transfers', 'Deliveries']
+                      ).map((item, index) => (
+                        <span key={index} className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">
+                          {item}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </div>
 
@@ -698,6 +813,81 @@ export default function TourismPage() {
                     ))}
                   </div>
                 </div> */}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Sports Section */}
+      <div className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <div className="flex justify-center mb-4">
+              <div className="p-4 rounded-full bg-gradient-to-r from-orange-500 to-red-500">
+                <Activity className="w-8 h-8 text-white" />
+              </div>
+            </div>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              {locale === 'bg' ? 'Спорт' : 'Sports'}
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              {locale === 'bg' 
+                ? 'Спортни дейности и йога занимания в село Байлово'
+                : 'Sports activities and yoga classes in Bailovo village'}
+            </p>
+          </div>
+          
+          <div className="max-w-4xl mx-auto">
+            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100">
+                <h4 className="text-xl font-bold text-gray-900">
+                  {locale === 'bg' ? 'Анахата Йога Клуб' : 'Anahata Yoga Club'}
+                </h4>
+                <p className="text-2xl font-bold text-gray-900">
+                  {locale === 'bg' ? 'Екатерина Йончева - Инструктор' : 'Ekaterina Yoncheva - Instructor'}
+                </p>
+              <p className="text-gray-600 mb-6">
+                {locale === 'bg' 
+                  ? 'Професионални йога занимания в спокойна обстановка, съчетаващи древни техники с модерни подходи за хармония на тялото и духа'
+                  : 'Professional yoga classes in a peaceful environment, combining ancient techniques with modern approaches for harmony of body and spirit'}
+              </p>
+              <div className="space-y-3 mb-6">
+                <div className="flex items-center space-x-3">
+                  <MapPin className="w-5 h-5 text-gray-500" />
+                  <span className="text-gray-700">
+                    {locale === 'bg' ? 'Читалището "Елин Пелин"' : 'Community Center "Elin Pelin"'}
+                  </span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <Clock className="w-5 h-5 text-gray-500" />
+                  <span className="text-gray-700">
+                    {locale === 'bg' ? 'Вторник и Неделя 18:30-20:00' : 'Tuesday and Sunday 18:30-20:00'}
+                  </span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <Phone className="w-5 h-5 text-gray-500" />
+                  <span className="text-gray-700">
+                    {locale === 'bg' ? 'За информация: ' : 'For information: '}
+                    <a href="tel:0888955322" className="text-blue-600 hover:text-blue-800 hover:underline">
+                      {locale === 'bg' ? '0888 955 322' : '0888 955 322'}
+                    </a>
+                  </span>
+                </div>
+              </div>
+              <div>
+                <h5 className="text-lg font-semibold text-gray-900 mb-3">
+                  {locale === 'bg' ? 'Видове йога:' : 'Yoga types:'}
+                </h5>
+                <div className="flex flex-wrap gap-2">
+                  {(locale === 'bg' 
+                    ? ['Хата йога', 'Виняса йога', 'Медитация', 'Дишащи техники'] 
+                    : ['Hatha yoga', 'Vinyasa yoga', 'Meditation', 'Breathing techniques']
+                  ).map((specialty, index) => (
+                    <span key={index} className="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-sm">
+                      {specialty}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
@@ -760,12 +950,34 @@ export default function TourismPage() {
                 </div>
                 
                 <ul className="space-y-3">
-                  {info.items.map((item, itemIndex) => (
-                    <li key={itemIndex} className="flex items-start space-x-3">
-                      <div className="w-2 h-2 bg-blue-600 rounded-full mt-2"></div>
-                      <span className="text-gray-700">{item}</span>
-                    </li>
-                  ))}
+                  {info.items.map((item, itemIndex) => {
+                    // Check if item contains a phone number
+                    const phoneRegex = /(\+359\s?\d{3}\s?\d{3}\s?\d{3}|\d{3})/g;
+                    const parts = item.split(phoneRegex);
+                    
+                    return (
+                      <li key={itemIndex} className="flex items-start space-x-3">
+                        <div className="w-2 h-2 bg-blue-600 rounded-full mt-2"></div>
+                        <span className="text-gray-700">
+                          {parts.map((part, partIndex) => {
+                            if (phoneRegex.test(part)) {
+                              const telNumber = part.replace(/\s/g, '');
+                              return (
+                                <a
+                                  key={partIndex}
+                                  href={`tel:${telNumber}`}
+                                  className="text-blue-600 hover:text-blue-800 hover:underline"
+                                >
+                                  {part}
+                                </a>
+                              );
+                            }
+                            return part;
+                          })}
+                        </span>
+                      </li>
+                    );
+                  })}
                 </ul>
               </div>
             ))}

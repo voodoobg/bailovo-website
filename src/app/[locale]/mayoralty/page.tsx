@@ -85,27 +85,27 @@ export default function MayoraltyPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50">
       {/* Hero Section */}
-      <div className="bg-gradient-to-r from-primary-600 to-secondary-600 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative pt-32 pb-16 px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
           <div className="text-center">
             <div className="flex justify-center mb-6">
-              <div className="p-4 bg-white/20 rounded-full">
+              <div className="bg-gradient-to-r from-blue-600 to-green-600 p-4 rounded-full shadow-xl">
                 <Building className="w-12 h-12 text-white" />
               </div>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
+            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
               {locale === 'bg' ? 'Кметство Байлово' : 'Bailovo Mayoralty'}
             </h1>
-            <p className="text-xl text-white/90 max-w-3xl mx-auto">
+            <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               {locale === 'bg' 
-                ? 'Административни услуги и обслужване на граждани в село Байлово' 
+                ? 'Административни услуги и обслужване на граждани в село Байлово'
                 : 'Administrative services and citizen services in Bailovo village'}
             </p>
           </div>
         </div>
-      </div>
+      </section>
 
       {/* About Section */}
       <div className="py-16 bg-white">
@@ -117,7 +117,7 @@ export default function MayoraltyPage() {
               </h2>
               <p className="text-lg text-gray-600 mb-6">
                 {locale === 'bg' 
-                  ? 'Кметство Байлово е част от община Горна Малина, Софийска област. Обслужава жителите на село Байлово и предоставя широк спектър от административни услуги.'
+                  ? 'Кметство Байлово е част от община Горна Малина, Софийска област. Обслужва жителите на село Байлово и предоставя широк спектър от административни услуги.'
                   : 'Bailovo Mayoralty is part of Gorna Malina Municipality, Sofia District. It serves the residents of Bailovo village and provides a wide range of administrative services.'
                 }
               </p>
@@ -151,8 +151,57 @@ export default function MayoraltyPage() {
         </div>
       </div>
 
-      {/* Services Section */}
+      {/* Team Section */}
       <div className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              {locale === 'bg' ? 'Екип' : 'Team'}
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              {locale === 'bg' 
+                ? 'Запознайте се с екипа на кметство Байлово'
+                : 'Meet the team of Bailovo Mayoralty'}
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {/* Mayor */}
+            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100">
+              <div className="text-center">
+                <div className="w-24 h-24 bg-gradient-to-br from-primary-100 to-secondary-100 rounded-full mx-auto mb-6 flex items-center justify-center">
+                  <Users className="w-12 h-12 text-primary-600" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">
+                  Петранка Петрова Лазарова
+                </h3>
+                <p className="text-primary-600 font-medium mb-4">
+                  {locale === 'bg' ? 'Кмет' : 'Mayor'}
+                </p>
+                <div className="w-16 h-1 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-full mx-auto"></div>
+              </div>
+            </div>
+
+            {/* Secretary */}
+            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100">
+              <div className="text-center">
+                <div className="w-24 h-24 bg-gradient-to-br from-primary-100 to-secondary-100 rounded-full mx-auto mb-6 flex items-center justify-center">
+                  <FileText className="w-12 h-12 text-primary-600" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">
+                  Спаска Траянова Атанасова
+                </h3>
+                <p className="text-primary-600 font-medium mb-4">
+                  {locale === 'bg' ? 'Секретар' : 'Secretary'}
+                </p>
+                <div className="w-16 h-1 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-full mx-auto"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Services Section */}
+      <div className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">

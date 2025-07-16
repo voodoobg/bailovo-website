@@ -5,8 +5,8 @@ import { Overpass } from "next/font/google";
 const overpass = Overpass({ subsets: ["latin", "cyrillic"] });
 
 export const metadata: Metadata = {
-  title: "Bailovo Village - Home of Elin Pelin",
-  description: "Official website of Bailovo village, Bulgaria - birthplace of the great Bulgarian writer Elin Pelin",
+  title: "Село Байлово - Родина на Елин Пелин",
+  description: "Официален сайт на село Байлово, България - родина на големия български писател Елин Пелин",
   icons: {
     icon: '/favicon.png',
     shortcut: '/favicon.png',

@@ -116,7 +116,8 @@ export default function CulturePage() {
       type: 'members',
       members: [
         { name: 'Илиана Димитрова Илиева', position: 'Секретар' },
-        { name: 'Красимира Христова Николова', position: 'Библиотекар' }
+        { name: 'Красимира Христова Николова', position: 'Библиотекар' },
+        { name: 'Иванка Спасова Димитрова', position: 'Чистач/хигиенист' }
       ]
     },
     // Second row - section header

@@ -1,8 +1,89 @@
+'use client';
+
 import { useTranslations } from 'next-intl';
-import { MapPin, Phone, Mail, Clock } from 'lucide-react';
+import { MapPin, Phone, Mail, Send, CheckCircle, AlertCircle } from 'lucide-react';
+import { useState } from 'react';
+
+interface FormData {
+  firstName: string;
+  lastName: string;
+  email: string;
+  subject: string;
+  message: string;
+}
+
+interface FormStatus {
+  type: 'idle' | 'loading' | 'success' | 'error';
+  message: string;
+}
 
 export default function ContactPage() {
   const t = useTranslations('contact');
+  
+  const [formData, setFormData] = useState<FormData>({
+    firstName: '',
+    lastName: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+  
+  const [status, setStatus] = useState<FormStatus>({
+    type: 'idle',
+    message: ''
+  });
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    // Reset status
+    setStatus({ type: 'loading', message: 'Изпращане на съобщението...' });
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        setStatus({
+          type: 'success',
+          message: result.message
+        });
+        // Reset form on success
+        setFormData({
+          firstName: '',
+          lastName: '',
+          email: '',
+          subject: '',
+          message: ''
+        });
+      } else {
+        setStatus({
+          type: 'error',
+          message: result.error || 'Възникна грешка при изпращането на съобщението.'
+        });
+      }
+    } catch {
+      setStatus({
+        type: 'error',
+        message: 'Възникна грешка при изпращането на съобщението. Моля проверете интернет връзката си.'
+      });
+    }
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
@@ -113,7 +194,38 @@ export default function ContactPage() {
           <div className="bg-white rounded-lg shadow-strong p-8">
             <h2 className="text-2xl font-bold text-primary-600 mb-6">{t('send_message')}</h2>
             
-            <form className="space-y-6">
+            {/* Status Message */}
+            {status.type !== 'idle' && (
+              <div className={`p-4 rounded-lg ${
+                status.type === 'success' 
+                  ? 'bg-green-50 border border-green-200' 
+                  : status.type === 'error'
+                  ? 'bg-red-50 border border-red-200'
+                  : 'bg-blue-50 border border-blue-200'
+              }`}>
+                <div className="flex items-center">
+                  {status.type === 'success' && <CheckCircle className="w-5 h-5 text-green-600 mr-2" />}
+                  {status.type === 'error' && <AlertCircle className="w-5 h-5 text-red-600 mr-2" />}
+                  {status.type === 'loading' && (
+                    <svg className="animate-spin w-5 h-5 text-blue-600 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                  )}
+                  <span className={`${
+                    status.type === 'success' 
+                      ? 'text-green-800' 
+                      : status.type === 'error'
+                      ? 'text-red-800'
+                      : 'text-blue-800'
+                  }`}>
+                    {status.message}
+                  </span>
+                </div>
+              </div>
+            )}
+
+            <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-2">
@@ -124,7 +236,9 @@ export default function ContactPage() {
                     id="firstName"
                     name="firstName"
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary-500 focus:border-secondary-500 transition-colors"
+                    value={formData.firstName}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary-500 focus:border-secondary-500 transition-colors text-gray-900"
                     placeholder={t('form_name_description')}
                   />
                 </div>
@@ -137,7 +251,9 @@ export default function ContactPage() {
                     id="lastName"
                     name="lastName"
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary-500 focus:border-secondary-500 transition-colors"
+                    value={formData.lastName}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary-500 focus:border-secondary-500 transition-colors text-gray-900"
                     placeholder={t('form_last_name_description')}
                   />
                 </div>
@@ -152,7 +268,9 @@ export default function ContactPage() {
                   id="email"
                   name="email"
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary-500 focus:border-secondary-500 transition-colors"
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary-500 focus:border-secondary-500 transition-colors text-gray-900"
                   placeholder="your@email.com"
                 />
               </div>
@@ -165,7 +283,9 @@ export default function ContactPage() {
                   type="text"
                   id="subject"
                   name="subject"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary-500 focus:border-secondary-500 transition-colors"
+                  value={formData.subject}
+                  onChange={handleInputChange}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary-500 focus:border-secondary-500 transition-colors text-gray-900"
                   placeholder={t('form_subject_description')}
                 />
               </div>
@@ -179,17 +299,36 @@ export default function ContactPage() {
                   name="message"
                   rows={6}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary-500 focus:border-secondary-500 transition-colors resize-vertical"
+                  value={formData.message}
+                  onChange={handleInputChange}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary-500 focus:border-secondary-500 transition-colors resize-vertical text-gray-900"
                   placeholder={t('form_message_description')}
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full bg-secondary-500 hover:bg-secondary-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 flex items-center justify-center"
+                disabled={status.type === 'loading'}
+                className={`w-full font-semibold py-3 px-6 rounded-lg transition-colors duration-200 flex items-center justify-center ${
+                  status.type === 'loading' 
+                    ? 'bg-gray-400 cursor-not-allowed' 
+                    : 'bg-secondary-500 hover:bg-secondary-600'
+                } text-white`}
               >
-                <Mail className="w-5 h-5 mr-2" />
-                {t('form_submit')}
+                {status.type === 'loading' ? (
+                  <>
+                    <svg className="animate-spin h-5 w-5 text-white mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    Изпращане...
+                  </>
+                ) : (
+                  <>
+                    <Send className="w-5 h-5 mr-2" />
+                    {t('form_submit')}
+                  </>
+                )}
               </button>
             </form>
           </div>

@@ -110,7 +110,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-gray-800 pt-8 flex flex-col lg:flex-row justify-between items-center space-y-4 lg:space-y-0">
           <p className="text-gray-400 text-lg">
-            © 2025 Село Байлово. All rights reserved | <a href="https://www.svet.dev" className="text-gray-400 hover:text-white transition-colors duration-200">Svet.dev</a>
+            © 2025 Село Байлово. All rights reserved | Направен с ❤️ от <a href="https://www.svet.dev" className="text-gray-400 hover:text-white transition-colors duration-200">Svet.dev</a>
           </p>
           <div className="flex items-center space-x-6">
             <Link 

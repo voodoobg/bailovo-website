@@ -238,7 +238,13 @@ export function getUpcomingEventsFromWP(posts: WPPost[], limit: number = 3): Eve
   const upcomingEvents = eventItems
     .filter(event => {
       const eventDate = new Date(event.date);
-      const isUpcoming = eventDate >= today;
+      const todayReset = new Date(today);
+      
+      // Reset time to compare only dates
+      todayReset.setHours(0, 0, 0, 0);
+      eventDate.setHours(0, 0, 0, 0);
+      
+      const isUpcoming = eventDate >= todayReset;
       console.log(`📅 Event "${event.title}" (${event.date}) - upcoming: ${isUpcoming}`);
       return isUpcoming;
     })

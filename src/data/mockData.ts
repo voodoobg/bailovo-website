@@ -145,7 +145,7 @@ export const mockNews: NewsItem[] = [
     slug: 'novi-peshehodni-marshruti-okolo-selo-bailovo',
     excerpt: 'Бяха открити три нови пешеходни маршрута, които водят до живописни места в околностите на село Байлово.',
     excerptEn: 'Three new hiking trails have been opened, leading to scenic spots around Bailovo village.',
-    content: `<p>Местната общност в село Байлово с гордост обявява откриването на три нови пешеходни маршрута, които ще позволят на посетителите да се насладят на красивата природа в региона.</p>
+    content: `<p>Местната общност в село Байлово с гордост обявява откриването на три нови пешеходни маршрута, които ще позволят на посетителите да се наслаждат на красивата природа в региона.</p>
 
 <p>Новите маршрути включват:</p>
 <ul>
@@ -367,7 +367,16 @@ export function getRecentNews(limit: number = 3): NewsItem[] {
 export function getUpcomingEvents(limit: number = 3): EventItem[] {
   const today = new Date();
   return mockEvents
-    .filter(event => new Date(event.date) >= today)
+    .filter(event => {
+      const eventDate = new Date(event.date);
+      const todayReset = new Date(today);
+      
+      // Reset time to compare only dates
+      todayReset.setHours(0, 0, 0, 0);
+      eventDate.setHours(0, 0, 0, 0);
+      
+      return eventDate >= todayReset;
+    })
     .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
     .slice(0, limit);
 } 

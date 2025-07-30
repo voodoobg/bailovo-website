@@ -150,7 +150,7 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-semibold text-primary-600 mb-1">{t('phone')}</h3>
                     <p className="text-gray-600">Читалище: <a href="tel:+359876734728">+359 876 734 728</a></p>
-                    <p className="text-gray-600">Кметство: <a href="tel:+359882445409">+359 882 445 409</a></p>
+                    <p className="text-gray-600">Кметство: <a href="tel:+359882521697">+359 882 521 697</a></p>
                   </div>
                 </div>
 

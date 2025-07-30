@@ -263,18 +263,10 @@ export default function MayoraltyPage() {
                   <div className="text-gray-600 space-y-1">
                     <div>
                       <a 
-                        href="tel:+359882445409" 
+                        href="tel:+359882521697" 
                         className="text-primary-600 hover:text-primary-800 transition-colors duration-200"
                       >
-                        +359 882 445 409
-                      </a>
-                    </div>
-                    <div>
-                      <a 
-                        href="tel:+359889703060" 
-                        className="text-primary-600 hover:text-primary-800 transition-colors duration-200"
-                      >
-                        +359 889 703 060
+                        +359 882 521 697
                       </a>
                     </div>
                   </div>

@@ -1,5 +1,6 @@
 import { useLocale } from 'next-intl';
 import { Plane, MapPin, Bed, Camera, Calendar, Car, Train, Bus, Star, Info, Clock, Phone, Utensils, ShoppingCart, Store, Activity } from 'lucide-react';
+import VideoPlayer from '@/components/VideoPlayer';
 
 export default function TourismPage() {
   const locale = useLocale();
@@ -193,6 +194,25 @@ export default function TourismPage() {
                 ? 'Открийте родното място на Елин Пелин и красотата на българската природа'
                 : 'Discover the birthplace of Elin Pelin and the beauty of Bulgarian nature'}
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Video Section */}
+      <section className="py-16 bg-gradient-to-br from-blue-50 to-green-50">
+        <div className="max-w-5xl mx-auto px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              {locale === 'bg' ? 'Открийте Байлово' : 'Discover Bailovo'}
+            </h2>
+          </div>
+          <div className="overflow-hidden rounded-3xl">
+            <VideoPlayer
+              thumbnailSrc="/images/video2-thumb.jpg"
+              videoId="BrEZBnACyKA"
+              title={locale === 'bg' ? 'Байлово туризъм' : 'Bailovo Tourism'}
+              hideBottomAd
+            />
           </div>
         </div>
       </section>

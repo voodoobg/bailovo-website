@@ -4,6 +4,7 @@ import { ArrowRight, TreePine, BookOpen, Plane } from 'lucide-react';
 import HeroSection from '@/components/HeroSection';
 import NewsEventsWidget from '@/components/NewsEventsWidget';
 import DebugPanel from '@/components/DebugPanel';
+import VideoPlayer from '@/components/VideoPlayer';
 
 export default function HomePage() {
   const t = useTranslations('homepage');
@@ -34,6 +35,22 @@ export default function HomePage() {
               </div>
             </span>
           </div>
+        </div>
+      </section>
+
+      {/* Video Section */}
+      <section className="py-24 bg-gradient-to-br from-gray-100 to-gray-50">
+        <div className="max-w-5xl mx-auto px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              {locale === 'bg' ? 'Българското село: Село Байлово' : 'See More About Bailovo'}
+            </h2>
+          </div>
+          <VideoPlayer
+            thumbnailSrc="/images/video-thumb.jpg"
+            videoId="BPyrWOiwBDE"
+            title="Байлово видео"
+          />
         </div>
       </section>
 

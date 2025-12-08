@@ -1,4 +1,5 @@
 import { useTranslations } from 'next-intl';
+import Image from 'next/image';
 import { BookOpen, Clock, MapPin, Camera, Users } from 'lucide-react';
 
 export default function MuseumPage() {
@@ -16,6 +17,51 @@ export default function MuseumPage() {
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             {t('description')}
           </p>
+        </div>
+
+        {/* Museum Gallery */}
+        <div className="mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {/* Large featured image */}
+            <div className="md:col-span-2 md:row-span-2 relative group overflow-hidden rounded-2xl shadow-lg aspect-[4/3] md:aspect-auto md:h-full">
+              <Image
+                src="/images/muzei1.jpg"
+                alt="Музей Елин Пелин - Родна къща"
+                fill
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                sizes="(max-width: 768px) 100vw, 66vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-6">
+                <h3 className="text-white text-2xl font-bold">Родната къща на Елин Пелин</h3>
+                <p className="text-white/80">Архитектурен образец от XIX век</p>
+              </div>
+            </div>
+
+            {/* Top right image */}
+            <div className="relative group overflow-hidden rounded-2xl shadow-lg aspect-[4/3]">
+              <Image
+                src="/images/muzei2.jpg"
+                alt="Музей Елин Пелин - Интериор"
+                fill
+                className="object-cover transition-transform duration-500 group-hover:scale-110"
+                sizes="(max-width: 768px) 100vw, 33vw"
+              />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
+            </div>
+
+            {/* Bottom right image */}
+            <div className="relative group overflow-hidden rounded-2xl shadow-lg aspect-[4/3]">
+              <Image
+                src="/images/muzei3.png"
+                alt="Музей Елин Пелин - Двор"
+                fill
+                className="object-cover transition-transform duration-500 group-hover:scale-110"
+                sizes="(max-width: 768px) 100vw, 33vw"
+              />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
+            </div>
+          </div>
         </div>
 
         {/* Main Content Grid */}

@@ -1,4 +1,5 @@
 import { useTranslations } from 'next-intl';
+import Image from 'next/image';
 import { Church, Cross, Heart, Calendar, Star } from 'lucide-react';
 
 export default function ChurchPage() {
@@ -68,6 +69,29 @@ export default function ChurchPage() {
           </div>
         </div>
       </section>
+
+      {/* Church Image Section */}
+      <div className="py-12 bg-white">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="relative group overflow-hidden rounded-3xl shadow-2xl aspect-[16/9]">
+            <Image
+              src="/images/curkva.jpg"
+              alt="Храм Св. Св. Кирил и Методий - Байлово"
+              fill
+              className="object-cover transition-transform duration-700 group-hover:scale-105"
+              sizes="(max-width: 1024px) 100vw, 1024px"
+              priority
+              unoptimized
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 p-8">
+              <p className="text-white/90 text-lg font-medium">
+                Възрожденска църква от 1884 година
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
 
       {/* About Section */}
       <div className="py-16 bg-white">

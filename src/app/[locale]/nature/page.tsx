@@ -1,4 +1,5 @@
 import { useLocale } from 'next-intl';
+import Image from 'next/image';
 import { TreePine, Mountain, Flower, Bird, Camera, Clock, Compass } from 'lucide-react';
 
 export default function NaturePage() {
@@ -210,6 +211,115 @@ export default function NaturePage() {
                   </li>
                 ))}
               </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Cave Gallery Section */}
+      <div className="py-16 bg-gradient-to-b from-gray-900 to-gray-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <span className="inline-block px-4 py-2 bg-emerald-500/20 text-emerald-400 rounded-full text-sm font-semibold mb-4">
+              {locale === 'bg' ? 'Природна забележителност' : 'Natural Landmark'}
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              {locale === 'bg' ? 'Пещерите край Байлово' : 'Caves near Bailovo'}
+            </h2>
+            <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+              {locale === 'bg' 
+                ? 'Открийте тайнствените пещери в околностите на селото'
+                : 'Discover the mysterious caves in the village surroundings'}
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Main cave image */}
+            <div className="relative group overflow-hidden rounded-2xl shadow-2xl aspect-[4/3]">
+              <Image
+                src="/images/peshtera.jpg"
+                alt={locale === 'bg' ? 'Пещера край Байлово' : 'Cave near Bailovo'}
+                fill
+                className="object-cover transition-transform duration-700 group-hover:scale-110"
+                sizes="(max-width: 768px) 100vw, 33vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-6">
+                <h3 className="text-white text-xl font-bold mb-2">
+                  {locale === 'bg' ? 'Вход към пещерата' : 'Cave Entrance'}
+                </h3>
+                <p className="text-white/80 text-sm">
+                  {locale === 'bg' ? 'Природен феномен в Средна гора' : 'Natural phenomenon in Sredna Gora'}
+                </p>
+              </div>
+            </div>
+
+            {/* Second cave image */}
+            <div className="relative group overflow-hidden rounded-2xl shadow-2xl aspect-[4/3]">
+              <Image
+                src="/images/peshtera2.jpg"
+                alt={locale === 'bg' ? 'Пещера интериор' : 'Cave interior'}
+                fill
+                className="object-cover transition-transform duration-700 group-hover:scale-110"
+                sizes="(max-width: 768px) 100vw, 33vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-6">
+                <h3 className="text-white text-xl font-bold mb-2">
+                  {locale === 'bg' ? 'Скални образувания' : 'Rock Formations'}
+                </h3>
+                <p className="text-white/80 text-sm">
+                  {locale === 'bg' ? 'Уникална геология' : 'Unique geology'}
+                </p>
+              </div>
+            </div>
+
+            {/* Hiking/Pohod image */}
+            <div className="relative group overflow-hidden rounded-2xl shadow-2xl aspect-[4/3]">
+              <Image
+                src="/images/pohod.jpg"
+                alt={locale === 'bg' ? 'Поход в планината' : 'Mountain hike'}
+                fill
+                className="object-cover transition-transform duration-700 group-hover:scale-110"
+                sizes="(max-width: 768px) 100vw, 33vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-6">
+                <h3 className="text-white text-xl font-bold mb-2">
+                  {locale === 'bg' ? 'Планински поход' : 'Mountain Hike'}
+                </h3>
+                <p className="text-white/80 text-sm">
+                  {locale === 'bg' ? 'Маршрути за туризъм' : 'Hiking trails'}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Info cards */}
+          <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center">
+              <div className="text-2xl font-bold text-emerald-400 mb-1">
+                {locale === 'bg' ? '~8.6kм' : '~8.6km'}
+              </div>
+              <div className="text-gray-300 text-sm">
+                {locale === 'bg' ? 'от центъра на селото' : 'from village center'}
+              </div>
+            </div>
+            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center">
+              <div className="text-2xl font-bold text-emerald-400 mb-1">
+                {locale === 'bg' ? 'Лесен' : 'Easy'}
+              </div>
+              <div className="text-gray-300 text-sm">
+                {locale === 'bg' ? 'достъп' : 'access'}
+              </div>
+            </div>
+            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center">
+              <div className="text-2xl font-bold text-emerald-400 mb-1">
+                {locale === 'bg' ? 'Целогодишно' : 'Year-round'}
+              </div>
+              <div className="text-gray-300 text-sm">
+                {locale === 'bg' ? 'посещение' : 'visits'}
+              </div>
             </div>
           </div>
         </div>

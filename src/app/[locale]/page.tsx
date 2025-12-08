@@ -1,5 +1,6 @@
 import { useTranslations, useLocale } from 'next-intl';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowRight, TreePine, BookOpen, Plane } from 'lucide-react';
 import HeroSection from '@/components/HeroSection';
 import NewsEventsWidget from '@/components/NewsEventsWidget';
@@ -147,6 +148,121 @@ export default function HomePage() {
             <div className="text-white">
               <div className="text-5xl font-black mb-4">24/7</div>
               <p className="text-xl text-secondary-100 font-bold">{t('stats.community')}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Chitalishte Gallery Section */}
+      <section className="py-24 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <span className="inline-block px-4 py-2 bg-secondary-100 text-secondary-700 rounded-full text-sm font-semibold mb-4">
+              {locale === 'bg' ? 'Културен център' : 'Cultural Center'}
+            </span>
+            <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-6">
+              {locale === 'bg' ? 'НЧ "Елин Пелин - 1922"' : 'Community Center "Elin Pelin - 1922"'}
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              {locale === 'bg' 
+                ? 'Сърцето на културния живот в Байлово - място за образование, изкуство и общност'
+                : 'The heart of cultural life in Bailovo - a place for education, art, and community'}
+            </p>
+          </div>
+
+          {/* Bento Grid Gallery */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+            {/* Large featured image */}
+            <div className="col-span-2 row-span-2 relative group overflow-hidden rounded-3xl shadow-lg">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10" />
+              <Image
+                src="/images/chitalishte1.jpg"
+                alt={locale === 'bg' ? 'Читалище Елин Пелин' : 'Elin Pelin Community Center'}
+                fill
+                className="object-cover transition-transform duration-700 group-hover:scale-110"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+              <div className="absolute bottom-0 left-0 right-0 p-6 z-20">
+                <h3 className="text-white text-2xl font-bold mb-2">
+                  {locale === 'bg' ? 'Читалището' : 'The Community Center'}
+                </h3>
+                <p className="text-white/80 text-sm">
+                  {locale === 'bg' ? 'Основано 1922 г.' : 'Founded 1922'}
+                </p>
+              </div>
+            </div>
+
+            {/* Top right image */}
+            <div className="relative group overflow-hidden rounded-2xl shadow-lg aspect-square">
+              <Image
+                src="/images/chitalishte2.jpg"
+                alt={locale === 'bg' ? 'Читалище интериор' : 'Community Center interior'}
+                fill
+                className="object-cover transition-transform duration-500 group-hover:scale-110"
+                sizes="(max-width: 768px) 50vw, 25vw"
+              />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
+            </div>
+
+            {/* Second top right image */}
+            <div className="relative group overflow-hidden rounded-2xl shadow-lg aspect-square">
+              <Image
+                src="/images/chitalishte3.jpg"
+                alt={locale === 'bg' ? 'Читалище събития' : 'Community Center events'}
+                fill
+                className="object-cover transition-transform duration-500 group-hover:scale-110"
+                sizes="(max-width: 768px) 50vw, 25vw"
+              />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
+            </div>
+
+            {/* Bottom right wide image */}
+            <div className="col-span-2 relative group overflow-hidden rounded-2xl shadow-lg aspect-[2/1]">
+              <Image
+                src="/images/chitalishte4.jpg"
+                alt={locale === 'bg' ? 'Читалище дейности' : 'Community Center activities'}
+                fill
+                className="object-cover transition-transform duration-500 group-hover:scale-110"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-secondary-600/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center">
+                <div className="p-6">
+                  <p className="text-white font-semibold">
+                    {locale === 'bg' ? 'Културни събития' : 'Cultural Events'}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom accent image - full width */}
+          <div className="mt-6 relative group overflow-hidden rounded-3xl shadow-xl aspect-[21/9]">
+            <Image
+              src="/images/chitalishte5.jpg"
+              alt={locale === 'bg' ? 'Читалище панорама' : 'Community Center panorama'}
+              fill
+              className="object-cover transition-transform duration-700 group-hover:scale-105"
+              sizes="100vw"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-gray-900/70 via-gray-900/30 to-transparent" />
+            <div className="absolute inset-0 flex items-center">
+              <div className="p-8 md:p-12 max-w-xl">
+                <h3 className="text-white text-2xl md:text-3xl font-bold mb-3">
+                  {locale === 'bg' ? 'Място за всички' : 'A Place for Everyone'}
+                </h3>
+                <p className="text-white/80 text-lg mb-6">
+                  {locale === 'bg' 
+                    ? 'Библиотека, танцови групи, музикални занимания и много повече'
+                    : 'Library, dance groups, music classes, and much more'}
+                </p>
+                <Link 
+                  href={`/${locale}/culture`}
+                  className="inline-flex items-center bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300"
+                >
+                  {locale === 'bg' ? 'Научете повече' : 'Learn More'}
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </Link>
+              </div>
             </div>
           </div>
         </div>

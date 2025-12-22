@@ -70,7 +70,7 @@ export default function Navigation({ enableSnow = false }: NavigationProps) {
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <Link href={`/${locale}`} className="flex mt-3 items-center space-x-3 group">
-            <div className="relative w-[250px] h-12 transform group-hover:scale-105 transition-transform duration-200">
+            <div className="relative w-[250px] h-16 transform group-hover:scale-105 transition-transform duration-200">
               <Image
                 src={logoSrc}
                 alt="с. Байлово"

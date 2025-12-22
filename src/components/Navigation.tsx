@@ -13,12 +13,18 @@ interface NavigationItem {
   dropdown?: NavigationItem[];
 }
 
-export default function Navigation() {
+interface NavigationProps {
+  enableSnow?: boolean;
+}
+
+export default function Navigation({ enableSnow = false }: NavigationProps) {
   const t = useTranslations('navigation');
   const locale = useLocale();
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  
+  const logoSrc = enableSnow ? '/logo3-winter.png' : '/logo3.png';
 
   const navigation: NavigationItem[] = [
     { name: t('home'), href: `/${locale}` },
@@ -66,7 +72,7 @@ export default function Navigation() {
           <Link href={`/${locale}`} className="flex mt-3 items-center space-x-3 group">
             <div className="relative w-[250px] h-12 transform group-hover:scale-105 transition-transform duration-200">
               <Image
-                src="/logo3.png"
+                src={logoSrc}
                 alt="с. Байлово"
                 fill
                 className="object-cover"

@@ -5,8 +5,13 @@ import Link from 'next/link';
 import { MapPin, Phone, Mail, Globe } from 'lucide-react';
 import Image from 'next/image';
 
-export default function Footer() {
+interface FooterProps {
+  enableSnow?: boolean;
+}
+
+export default function Footer({ enableSnow = false }: FooterProps) {
   const locale = useLocale();
+  const logoSrc = enableSnow ? '/logo3-winter.png' : '/logo3.png';
 
   return (
     <footer className="bg-gray-900 text-white">
@@ -18,7 +23,7 @@ export default function Footer() {
               <Link href={`/${locale}`} className="flex mt-3 items-center space-x-3 group">
                 <div className="relative w-[250px] h-12 transform group-hover:scale-105 transition-transform duration-200">
                   <Image
-                    src="/logo3.png"
+                    src={logoSrc}
                     alt="с. Байлово"
                     fill
                     className="object-cover"

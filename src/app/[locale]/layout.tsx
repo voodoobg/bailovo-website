@@ -18,7 +18,13 @@ export default async function LocaleLayout({
   params: { locale }
 }: Props) {
   const messages = await getMessages();
-  const enableSnow = process.env.ENABLE_SNOW === 'true';
+  const snowOverride = process.env.ENABLE_SNOW;
+  const isWinterSeason = (() => {
+    const now = new Date();
+    const month = now.getMonth() + 1; // 1-12
+    return month === 11 || month === 12 || month === 1;
+  })();
+  const enableSnow = snowOverride === 'true' || (snowOverride !== 'false' && isWinterSeason);
 
   return (
     <NextIntlClientProvider locale={locale} messages={messages}>

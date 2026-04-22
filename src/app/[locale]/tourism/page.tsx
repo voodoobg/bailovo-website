@@ -861,7 +861,7 @@ export default function TourismPage() {
           <div className="max-w-4xl mx-auto">
             <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100">
                 <h4 className="text-xl font-bold text-gray-900">
-                  {locale === 'bg' ? 'Анахата Йога Клуб' : 'Anahata Yoga Club'}
+                  {locale === 'bg' ? 'Йога Клуб' : 'Yoga Club'}
                 </h4>
                 <p className="text-2xl font-bold text-gray-900">
                   {locale === 'bg' ? 'Екатерина Йончева - Инструктор' : 'Ekaterina Yoncheva - Instructor'}
@@ -890,9 +890,6 @@ export default function TourismPage() {
                     {locale === 'bg' ? 'За информация: ' : 'For information: '}
                     <a href="tel:0888955322" className="text-blue-600 hover:text-blue-800 hover:underline">
                       {locale === 'bg' ? '0888 955 322' : '0888 955 322'}
-                    </a>
-                    <a href="tel:0889122024" className="text-blue-600 hover:text-blue-800 hover:underline">
-                      {locale === 'bg' ? ',  0889 122 024' : ',  0889 122 024'}
                     </a>
                   </span>
                 </div>

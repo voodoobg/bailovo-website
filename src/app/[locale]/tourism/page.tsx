@@ -881,7 +881,7 @@ export default function TourismPage() {
                 <div className="flex items-center space-x-3">
                   <Clock className="w-5 h-5 text-gray-500" />
                   <span className="text-gray-700">
-                    {locale === 'bg' ? 'Вторник 19:00-20:30, Неделя 16:30-18:00' : 'Tuesday 19:00-20:30, Sunday 16:30-18:00'}
+                    {locale === 'bg' ? 'Вторник 19:00-20:30, Неделя 17:00-18:30' : 'Tuesday 19:00-20:30, Sunday 17:00-18:30'}
                   </span>
                 </div>
                 <div className="flex items-center space-x-3">

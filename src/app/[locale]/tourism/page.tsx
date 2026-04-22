@@ -861,10 +861,10 @@ export default function TourismPage() {
           <div className="max-w-4xl mx-auto">
             <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100">
                 <h4 className="text-xl font-bold text-gray-900">
-                  {locale === 'bg' ? 'Йога Клуб' : 'Yoga Club'}
+                  {locale === 'bg' ? 'Класическа йога' : 'Classical yoga'}
                 </h4>
                 <p className="text-2xl font-bold text-gray-900">
-                  {locale === 'bg' ? 'Екатерина Йончева - Инструктор' : 'Ekaterina Yoncheva - Instructor'}
+                  {locale === 'bg' ? 'Екатерина Йончева - инструктор' : 'Ekaterina Yoncheva - instructor'}
                 </p>
               <p className="text-gray-600 mb-6">
                 {locale === 'bg' 
